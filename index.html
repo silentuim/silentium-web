@@ -123,6 +123,34 @@
   .app-subscribe a.annual{background:var(--cyan);color:var(--void);border-color:var(--cyan);}
   .app-subscribe a.annual:hover{opacity:0.9;color:var(--void);}
 
+  /* DESCARGA DE AIRBOT RADAR
+     El APK no vive en este repositorio: lo sirve la API tras comprobar que el
+     email tiene una suscripción activa. Aquí solo se recoge el email. */
+  .apk-gate{margin-top:14px;}
+  .apk-gate input{
+    width:100%;padding:9px 11px;border-radius:7px;
+    border:1px solid var(--line);background:rgba(255,255,255,0.03);
+    color:var(--text);font-size:13px;font-family:inherit;
+  }
+  .apk-gate input:focus{outline:none;border-color:var(--cyan);}
+  .apk-gate button{
+    width:100%;margin-top:8px;padding:10px 0;border-radius:7px;cursor:pointer;
+    border:1px solid var(--cyan);background:var(--cyan);color:var(--void);
+    font-size:13px;font-weight:600;font-family:inherit;
+    transition:opacity .2s ease;
+  }
+  .apk-gate button:hover{opacity:0.9;}
+  .apk-gate button[disabled]{opacity:0.55;cursor:default;}
+  .apk-msg{margin:9px 0 0;font-size:12px;line-height:1.55;display:none;}
+  .apk-msg.show{display:block;}
+  .apk-msg.err{color:var(--gold);}
+  .apk-msg.ok{color:var(--cyan);}
+  .apk-note{margin:9px 0 0;font-size:11.5px;line-height:1.5;color:var(--muted);}
+  .sr-only{
+    position:absolute;width:1px;height:1px;padding:0;margin:-1px;
+    overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;
+  }
+
   /* RAYOS DORADOS ANIMADOS */
   .light-rays{position:fixed;inset:0;pointer-events:none;z-index:1;overflow:hidden;}
   .ray{
@@ -276,6 +304,14 @@
         <h3>AirBot Radar</h3>
         <p data-i18n="apps.airbot.desc">Alertas de airdrops y muestras gratuitas, con filtro anti-phishing.</p>
         <span class="badge badge-gift" data-i18n="apps.gift">🎁 Regalo con cualquier suscripción</span>
+        <form class="apk-gate" id="airbotForm" novalidate>
+          <label class="sr-only" for="airbotEmail" data-i18n="apps.airbot.emailLabel">Email de tu suscripción</label>
+          <input type="email" id="airbotEmail" name="email" required autocomplete="email"
+                 placeholder="tu@email.com" data-i18n-placeholder="apps.airbot.emailPlaceholder">
+          <button type="submit" id="airbotBtn" data-i18n="apps.airbot.download">Descargar AirBot Radar</button>
+          <p class="apk-msg" id="airbotMsg" role="status" aria-live="polite"></p>
+          <p class="apk-note" data-i18n="apps.airbot.note">Descarga reservada a suscriptores. Instalación directa, fuera de tienda.</p>
+        </form>
       </div>
 
       <div class="app-card">
@@ -383,6 +419,7 @@ const translations = {
     "apps.binaural.desc":"Sonidos binaurales y ambientes naturales para concentración y descanso.",
     "apps.zerotrace.desc":"Limpieza y protección de privacidad del dispositivo, sin telemetría.",
     "apps.airbot.desc":"Alertas de airdrops y muestras gratuitas, con filtro anti-phishing.",
+    "apps.airbot.download":"Descargar AirBot Radar","apps.airbot.emailLabel":"Email de tu suscripción","apps.airbot.emailPlaceholder":"tu@email.com","apps.airbot.note":"Descarga reservada a suscriptores. Instalación directa, fuera de tienda.","apps.airbot.msgChecking":"Comprobando tu suscripción…","apps.airbot.msgOk":"¡Listo! La descarga ha comenzado.","apps.airbot.msgNoSub":"No hemos encontrado una suscripción activa con ese email. Si acabas de suscribirte, espera unos minutos e inténtalo de nuevo.","apps.airbot.msgInvalid":"Escribe un email válido.","apps.airbot.msgError":"No hemos podido completar la descarga. Inténtalo de nuevo más tarde.",
     "apps.hydra.desc":"Herramientas de bolsillo para desarrolladores y makers.",
     "apps.available":"Disponible","apps.soon":"Próximamente","apps.gift":"🎁 Regalo con cualquier suscripción",
     "apps.monthly":"Mensual","apps.annual":"Anual",
@@ -411,6 +448,7 @@ const translations = {
     "apps.binaural.desc":"Binaural sounds and nature ambiences for focus and rest.",
     "apps.zerotrace.desc":"Device privacy cleanup and protection, no telemetry.",
     "apps.airbot.desc":"Airdrop and free sample alerts, with anti-phishing filtering.",
+    "apps.airbot.download":"Download AirBot Radar","apps.airbot.emailLabel":"Your subscription email","apps.airbot.emailPlaceholder":"you@email.com","apps.airbot.note":"Download reserved for subscribers. Direct install, outside any store.","apps.airbot.msgChecking":"Checking your subscription…","apps.airbot.msgOk":"Done. Your download has started.","apps.airbot.msgNoSub":"We could not find an active subscription for that email. If you just subscribed, wait a few minutes and try again.","apps.airbot.msgInvalid":"Please enter a valid email.","apps.airbot.msgError":"We could not complete the download. Please try again later.",
     "apps.hydra.desc":"Pocket tools for developers and makers.",
     "apps.available":"Available","apps.soon":"Coming soon","apps.gift":"🎁 Free with any subscription",
     "apps.monthly":"Monthly","apps.annual":"Annual",
@@ -439,6 +477,7 @@ const translations = {
     "apps.binaural.desc":"Sons binauraux et ambiances naturelles pour la concentration et le repos.",
     "apps.zerotrace.desc":"Nettoyage et protection de la vie privée de l'appareil, sans télémétrie.",
     "apps.airbot.desc":"Alertes airdrops et échantillons gratuits, avec filtre anti-phishing.",
+    "apps.airbot.download":"Télécharger AirBot Radar","apps.airbot.emailLabel":"E-mail de votre abonnement","apps.airbot.emailPlaceholder":"vous@email.com","apps.airbot.note":"Téléchargement réservé aux abonnés. Installation directe, hors boutique.","apps.airbot.msgChecking":"Vérification de votre abonnement…","apps.airbot.msgOk":"C'est parti, le téléchargement a commencé.","apps.airbot.msgNoSub":"Nous n'avons pas trouvé d'abonnement actif pour cet e-mail. Si vous venez de vous abonner, patientez quelques minutes et réessayez.","apps.airbot.msgInvalid":"Saisissez un e-mail valide.","apps.airbot.msgError":"Le téléchargement n'a pas pu aboutir. Réessayez plus tard.",
     "apps.hydra.desc":"Outils de poche pour développeurs et makers.",
     "apps.available":"Disponible","apps.soon":"Bientôt disponible","apps.gift":"🎁 Offert avec tout abonnement",
     "apps.monthly":"Mensuel","apps.annual":"Annuel",
@@ -467,6 +506,7 @@ const translations = {
     "apps.binaural.desc":"Binaurale Klänge und Naturklänge für Konzentration und Erholung.",
     "apps.zerotrace.desc":"Bereinigung und Schutz der Geräteprivatsphäre, ohne Telemetrie.",
     "apps.airbot.desc":"Airdrop- und Gratisproben-Alarme mit Anti-Phishing-Filter.",
+    "apps.airbot.download":"AirBot Radar herunterladen","apps.airbot.emailLabel":"E-Mail deines Abos","apps.airbot.emailPlaceholder":"du@email.com","apps.airbot.note":"Download nur für Abonnenten. Direkte Installation, außerhalb jedes Stores.","apps.airbot.msgChecking":"Dein Abo wird geprüft…","apps.airbot.msgOk":"Fertig. Der Download wurde gestartet.","apps.airbot.msgNoSub":"Wir konnten kein aktives Abo für diese E-Mail finden. Wenn du gerade abonniert hast, warte ein paar Minuten und versuche es erneut.","apps.airbot.msgInvalid":"Bitte gib eine gültige E-Mail ein.","apps.airbot.msgError":"Der Download konnte nicht abgeschlossen werden. Bitte versuche es später erneut.",
     "apps.hydra.desc":"Taschenwerkzeuge für Entwickler und Maker.",
     "apps.available":"Verfügbar","apps.soon":"Demnächst","apps.gift":"🎁 Gratis bei jedem Abo",
     "apps.monthly":"Monatlich","apps.annual":"Jährlich",
@@ -493,6 +533,14 @@ function applyLang(lang) {
     const key = el.getAttribute('data-i18n');
     if (dict[key]) el.innerHTML = dict[key];
   });
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const key = el.getAttribute('data-i18n-placeholder');
+    if (dict[key]) el.placeholder = dict[key];
+  });
+  // El mensaje de la descarga se repinta en el idioma nuevo si hay uno visible,
+  // para que cambiar de idioma no deje un aviso en el anterior.
+  const msg = document.getElementById('airbotMsg');
+  if (msg && msg.dataset.key && dict[msg.dataset.key]) msg.innerHTML = dict[msg.dataset.key];
   document.documentElement.lang = lang;
   localStorage.setItem('silentium_lang', lang);
   const sel = document.getElementById('langSwitch');
@@ -506,10 +554,84 @@ function detectInitialLang() {
   return translations[nav] ? nav : 'es';
 }
 
+/* DESCARGA DE AIRBOT RADAR
+   El APK lo sirve la API, que sólo lo entrega si el email tiene una suscripción
+   activa: 200 con el binario, o 403 con {"detail": "..."}. Este repositorio no
+   contiene el archivo. */
+const AIRBOT_DOWNLOAD_URL = 'https://api.silentiumsupernova.com/download/airbotradar';
+
+function airbotMessage(key, kind) {
+  const msg = document.getElementById('airbotMsg');
+  if (!msg) return;
+  const dict = translations[document.documentElement.lang] || translations.es;
+  msg.dataset.key = key;
+  msg.innerHTML = dict[key] || '';
+  msg.className = 'apk-msg show ' + kind;
+}
+
+function airbotSaveBlob(blob, filename) {
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  // Se revoca con retraso: revocarlo de inmediato aborta la descarga en algunos
+  // navegadores, que aún no han terminado de leer el blob cuando vuelve el click.
+  setTimeout(() => URL.revokeObjectURL(url), 60000);
+}
+
+function airbotFilenameFrom(response) {
+  const cd = response.headers.get('Content-Disposition') || '';
+  const match = /filename\*?=(?:UTF-8'')?"?([^;"]+)"?/i.exec(cd);
+  return match ? decodeURIComponent(match[1].trim()) : 'AirBotRadar.apk';
+}
+
+async function airbotDownload(event) {
+  event.preventDefault();
+  const input = document.getElementById('airbotEmail');
+  const button = document.getElementById('airbotBtn');
+  const email = (input.value || '').trim();
+
+  if (!email || !input.checkValidity()) {
+    airbotMessage('apps.airbot.msgInvalid', 'err');
+    input.focus();
+    return;
+  }
+
+  button.disabled = true;
+  airbotMessage('apps.airbot.msgChecking', 'ok');
+
+  const url = AIRBOT_DOWNLOAD_URL + '?email=' + encodeURIComponent(email);
+  try {
+    const response = await fetch(url);
+    if (response.ok) {
+      airbotSaveBlob(await response.blob(), airbotFilenameFrom(response));
+      airbotMessage('apps.airbot.msgOk', 'ok');
+    } else if (response.status === 403) {
+      airbotMessage('apps.airbot.msgNoSub', 'err');
+    } else {
+      airbotMessage('apps.airbot.msgError', 'err');
+    }
+  } catch (e) {
+    // Un fetch entre orígenes distintos también cae aquí cuando la API no
+    // devuelve Access-Control-Allow-Origin, sin forma de distinguirlo de estar
+    // sin red. En ese caso se navega directamente a la misma URL: la navegación
+    // no está sujeta a CORS, así que un suscriptor recibe igualmente su archivo.
+    window.location.assign(url);
+    airbotMessage('apps.airbot.msgError', 'err');
+  } finally {
+    button.disabled = false;
+  }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   applyLang(detectInitialLang());
   const sel = document.getElementById('langSwitch');
   if (sel) sel.addEventListener('change', (e) => applyLang(e.target.value));
+  const form = document.getElementById('airbotForm');
+  if (form) form.addEventListener('submit', airbotDownload);
 });
 </script>
 </body>
