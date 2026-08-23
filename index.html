@@ -63,6 +63,9 @@
   .brand-dot{width:9px;height:9px;border-radius:50%;background:var(--cyan);box-shadow:0 0 10px var(--cyan);}
   .nav-links{display:flex;gap:28px;font-size:14px;color:var(--text-dim);}
   .nav-links a:hover{color:var(--cyan);}
+  /* Con la barra fija, un salto por ancla dejaria el titulo de la seccion
+     escondido detras. scroll-margin-top reserva su altura. */
+  section[id]{scroll-margin-top:100px;}
 
   /* HERO */
   .hero{
@@ -200,7 +203,7 @@
     100%{left:var(--start);transform:rotate(8deg);opacity:0;}
   }
   .wrap{position:relative;z-index:2;}
-  header, .hero, .section, footer{position:relative;z-index:2;}
+  .hero, .section, footer{position:relative;z-index:2;}
 
   /* PRICING */
   .pricing-grid{
@@ -218,7 +221,7 @@
     background:linear-gradient(180deg, rgba(232,185,79,0.08), var(--panel-raised));
   }
   .price-card.featured::before{
-    content:"Mejor precio";
+    content:attr(data-badge);
     position:absolute;top:-13px;left:50%;transform:translateX(-50%);
     background:var(--gold);color:var(--navy);font-size:11px;font-weight:700;
     padding:4px 14px;border-radius:20px;letter-spacing:0.5px;
@@ -297,9 +300,10 @@
 
   /* --- MOVIL ANCHO / la barra deja de caber en una linea: <=720px --- */
   @media (max-width:720px){
-    nav{padding:10px 16px;gap:6px;}
+    nav{padding:8px 16px;gap:6px;}
+    section[id]{scroll-margin-top:110px;}
     .brand{font-size:15px;gap:8px;}
-    .brand img{width:40px;height:40px;}
+    .brand img{width:34px;height:34px;}
     /* La fila de enlaces pasa entera debajo de la marca y se centra. */
     .nav-links{flex:1 0 100%;justify-content:center;align-items:center;gap:4px;font-size:14px;}
     .nav-links a{
@@ -367,6 +371,8 @@
 
   /* --- MOVIL EN HORIZONTAL: pantalla muy baja --- */
   @media (max-width:900px) and (max-height:500px) and (orientation:landscape){
+    header{position:relative;}
+    section[id]{scroll-margin-top:16px;}
     .hero{padding:32px 20px 28px;}
     .section{padding:40px 20px;}
   }
@@ -452,8 +458,8 @@
         <p data-i18n="apps.binaural.desc">Sonidos binaurales y ambientes naturales para concentración y descanso.</p>
         <span class="badge" data-i18n="apps.available">Disponible</span>
         <div class="app-subscribe">
-          <a href="https://buy.stripe.com/eVq6oH43Kb9GfPg1iJcMM01" target="_blank" rel="noopener">Mensual</a>
-          <a href="https://buy.stripe.com/bJe5kDgQwgu05aC3qRcMM04" target="_blank" rel="noopener" class="annual">Anual</a>
+          <a href="https://buy.stripe.com/eVq6oH43Kb9GfPg1iJcMM01" target="_blank" rel="noopener" data-i18n="apps.monthly">Mensual</a>
+          <a href="https://buy.stripe.com/bJe5kDgQwgu05aC3qRcMM04" target="_blank" rel="noopener" class="annual" data-i18n="apps.annual">Anual</a>
         </div>
       </div>
 
@@ -463,8 +469,8 @@
         <p data-i18n="apps.zerotrace.desc">Limpieza y protección de privacidad del dispositivo, sin telemetría.</p>
         <span class="badge" data-i18n="apps.available">Disponible</span>
         <div class="app-subscribe">
-          <a href="https://buy.stripe.com/cNiaEXfMsb9G32u1iJcMM03" target="_blank" rel="noopener">Mensual</a>
-          <a href="https://buy.stripe.com/8x2bJ19o40v2cD48LbcMM05" target="_blank" rel="noopener" class="annual">Anual</a>
+          <a href="https://buy.stripe.com/cNiaEXfMsb9G32u1iJcMM03" target="_blank" rel="noopener" data-i18n="apps.monthly">Mensual</a>
+          <a href="https://buy.stripe.com/8x2bJ19o40v2cD48LbcMM05" target="_blank" rel="noopener" class="annual" data-i18n="apps.annual">Anual</a>
         </div>
       </div>
 
@@ -502,7 +508,7 @@
 
       <div class="price-card">
         <h4 data-i18n="pricing.monthly.name">Individual mensual</h4>
-        <div class="price">4,95€<span>/mes</span></div>
+        <div class="price">4,95€<span data-i18n="pricing.perMonth">/mes</span></div>
         <ul>
           <li data-i18n="pricing.li.chooseApp">1 app a elegir</li>
           <li data-i18n="pricing.li.updates">Actualizaciones incluidas</li>
@@ -515,7 +521,7 @@
       <div class="price-card">
         <h4 data-i18n="pricing.annual.name">Individual anual</h4>
         <div class="old-price">59,40€</div>
-        <div class="price">24,50€<span>/año</span></div>
+        <div class="price">24,50€<span data-i18n="pricing.perYear">/año</span></div>
         <ul>
           <li data-i18n="pricing.li.chooseApp">1 app a elegir</li>
           <li data-i18n="pricing.li.save50">Ahorra más del 50%</li>
@@ -525,10 +531,10 @@
         <a href="#apps" class="btn btn-ghost" style="display:block;text-align:center;margin-top:10px;" data-i18n="pricing.btnChoose">Elige tu app</a>
       </div>
 
-      <div class="price-card featured">
+      <div class="price-card featured" data-badge="Mejor precio" data-i18n-badge="pricing.best">
         <h4 data-i18n="pricing.pack.name">Pack completo anual</h4>
         <div class="old-price">122,50€</div>
-        <div class="price">49€<span>/año</span></div>
+        <div class="price">49€<span data-i18n="pricing.perYear">/año</span></div>
         <ul>
           <li data-i18n="pricing.li.allApps">Todas las apps</li>
           <li data-i18n="pricing.li.futureApps">Acceso a las próximas apps</li>
@@ -597,6 +603,7 @@ const translations = {
     "pricing.li.chooseApp":"1 app a elegir","pricing.li.updates":"Actualizaciones incluidas","pricing.li.noAds":"Sin anuncios",
     "pricing.li.save50":"Ahorra más del 50%","pricing.li.allApps":"Todas las apps","pricing.li.futureApps":"Acceso a las próximas apps",
     "pricing.li.priority":"Soporte prioritario","pricing.li.gift":"🎁 AirBot Radar de regalo",
+    "pricing.perMonth":"/mes","pricing.perYear":"/año","pricing.best":"Mejor precio",
     "pricing.btnChoose":"Elige tu app","pricing.btnSubscribe":"Suscribirme ahora",
     "blog.label":"Blog","blog.title":"Ciberseguridad, sin humo",
     "blog.post1.tag":"Privacidad","blog.post1.title":"Por qué \"gratis\" casi siempre significa que el producto eres tú",
@@ -626,6 +633,7 @@ const translations = {
     "pricing.li.chooseApp":"1 app of your choice","pricing.li.updates":"Updates included","pricing.li.noAds":"No ads",
     "pricing.li.save50":"Save over 50%","pricing.li.allApps":"All apps","pricing.li.futureApps":"Access to future apps",
     "pricing.li.priority":"Priority support","pricing.li.gift":"🎁 Free AirBot Radar",
+    "pricing.perMonth":"/month","pricing.perYear":"/year","pricing.best":"Best value",
     "pricing.btnChoose":"Choose your app","pricing.btnSubscribe":"Subscribe now",
     "blog.label":"Blog","blog.title":"Cybersecurity, no hype",
     "blog.post1.tag":"Privacy","blog.post1.title":"Why \"free\" usually means you're the product",
@@ -655,6 +663,7 @@ const translations = {
     "pricing.li.chooseApp":"1 app au choix","pricing.li.updates":"Mises à jour incluses","pricing.li.noAds":"Sans publicité",
     "pricing.li.save50":"Économisez plus de 50%","pricing.li.allApps":"Toutes les apps","pricing.li.futureApps":"Accès aux futures apps",
     "pricing.li.priority":"Support prioritaire","pricing.li.gift":"🎁 AirBot Radar offert",
+    "pricing.perMonth":"/mois","pricing.perYear":"/an","pricing.best":"Meilleur prix",
     "pricing.btnChoose":"Choisissez votre app","pricing.btnSubscribe":"S'abonner maintenant",
     "blog.label":"Blog","blog.title":"Cybersécurité, sans blabla",
     "blog.post1.tag":"Confidentialité","blog.post1.title":"Pourquoi \"gratuit\" signifie souvent que vous êtes le produit",
@@ -684,6 +693,7 @@ const translations = {
     "pricing.li.chooseApp":"1 App deiner Wahl","pricing.li.updates":"Updates inklusive","pricing.li.noAds":"Keine Werbung",
     "pricing.li.save50":"Über 50% sparen","pricing.li.allApps":"Alle Apps","pricing.li.futureApps":"Zugang zu zukünftigen Apps",
     "pricing.li.priority":"Prioritäts-Support","pricing.li.gift":"🎁 AirBot Radar gratis",
+    "pricing.perMonth":"/Monat","pricing.perYear":"/Jahr","pricing.best":"Bester Preis",
     "pricing.btnChoose":"Wähle deine App","pricing.btnSubscribe":"Jetzt abonnieren",
     "blog.label":"Blog","blog.title":"Cybersicherheit, ohne Hype",
     "blog.post1.tag":"Datenschutz","blog.post1.title":"Warum \"kostenlos\" meist bedeutet, dass du das Produkt bist",
@@ -705,6 +715,12 @@ function applyLang(lang) {
   document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
     const key = el.getAttribute('data-i18n-placeholder');
     if (dict[key]) el.placeholder = dict[key];
+  });
+  // La insignia de la tarjeta destacada se pinta con content:attr(data-badge),
+  // asi que se traduce escribiendo el atributo, no el contenido del elemento.
+  document.querySelectorAll('[data-i18n-badge]').forEach(el => {
+    const key = el.getAttribute('data-i18n-badge');
+    if (dict[key]) el.setAttribute('data-badge', dict[key]);
   });
   // El mensaje de la descarga se repinta en el idioma nuevo si hay uno visible,
   // para que cambiar de idioma no deje un aviso en el anterior.
