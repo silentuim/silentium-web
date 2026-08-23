@@ -1,0 +1,7 @@
+# https://silentiumsupernova.com/
+# Sitio de una sola pagina: todo es indexable.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://silentiumsupernova.com/sitemap.xml

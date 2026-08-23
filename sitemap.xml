@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  El sitio es una unica pagina. Los cuatro idiomas (ES/EN/FR/DE) se sirven
+  desde esta misma URL y se cambian por JavaScript, asi que no hay URLs
+  alternas que anotar con hreflang: hreflang exige una URL distinta por idioma.
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://silentiumsupernova.com/</loc>
+    <lastmod>2026-08-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+</urlset>
