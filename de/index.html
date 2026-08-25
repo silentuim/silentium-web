@@ -329,6 +329,31 @@
   .wrap{position:relative;z-index:2;}
   .hero, .section, footer{position:relative;z-index:2;}
 
+  /* VERSIONES GRATUITAS
+     Sin componente nuevo: la tarjeta repite el degradado, el borde y el radio de
+     .app-card, y la insignia es la .badge de siempre. La rejilla copia la de
+     .pricing-grid, incluido su corte a una columna en 800px, para que las dos
+     filas de tarjetas que se ven seguidas se comporten igual al estrechar. */
+  .section-title-tight{margin-bottom:14px;}
+  .section-sub{
+    text-align:center;color:var(--text-dim);
+    font-size:16px;line-height:1.6;
+    max-width:620px;margin:0 auto 44px;
+  }
+  .free-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
+    max-width:920px;margin:0 auto;
+  }
+  @media(max-width:800px){.free-grid{grid-template-columns:1fr;}}
+  .free-card{
+    background:linear-gradient(180deg, var(--panel-raised), var(--panel));
+    border:1px solid var(--line);
+    border-radius:14px;padding:24px 22px;text-align:center;
+    transition:border-color .2s ease, transform .2s ease;
+  }
+  .free-card:hover{border-color:var(--cyan);transform:translateY(-4px);}
+  .free-card h3{font-size:17px;margin-bottom:12px;}
+
   /* PRICING */
   .pricing-grid{
     display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
@@ -480,6 +505,10 @@
     .app-card{padding:20px;}
     .app-subscribe{gap:10px;}
 
+    .section-sub{font-size:15px;margin-bottom:34px;}
+    .free-grid{gap:16px;}
+    .free-card{padding:20px 18px;}
+
     .pricing-grid{max-width:none;gap:24px;}
     .price-card{padding:28px 20px;}
     .price-card .price{font-size:34px;}
@@ -511,14 +540,14 @@
       min-height:44px;display:flex;align-items:center;justify-content:center;
     }
     .apk-gate input,.apk-gate button{min-height:44px;font-size:16px;}
-    .app-card:hover,.price-card:hover{transform:none;border-color:var(--line);}
+    .app-card:hover,.price-card:hover,.free-card:hover{transform:none;border-color:var(--line);}
     .btn-primary:hover{transform:none;box-shadow:none;}
   }
 
   /* --- MOVIMIENTO REDUCIDO --- */
   @media (prefers-reduced-motion:reduce){
     .ray{animation:none;opacity:0.35;}
-    .btn,.app-card,.app-subscribe a,.apk-gate button{transition:none;}
+    .btn,.app-card,.free-card,.app-subscribe a,.apk-gate button{transition:none;}
   }
 </style>
 </head>
@@ -617,6 +646,32 @@
         <h3>Hydra Pocket</h3>
         <p>Taschenwerkzeuge für Entwickler und Maker.</p>
         <span class="badge badge-soon">Demnächst</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section" id="gratis">
+  <div class="wrap">
+    <div class="section-label">Kostenlos</div>
+    <h2 class="section-title section-title-tight">Probier's wirklich aus, ohne Tricks</h2>
+    <p class="section-sub">Keine Karte, keine Anmeldung, kein Zeitlimit. Lade die kostenlose Version jeder App herunter und überzeuge dich selbst, bevor du entscheidest.</p>
+    <div class="free-grid">
+
+      <div class="free-card">
+        <h3>MindTrace</h3>
+        <span class="badge">Kostenloser Tageseintrag, für immer</span>
+      </div>
+
+      <div class="free-card">
+        <h3>BinauralNature</h3>
+        <span class="badge">4 kostenlose Klänge, für immer</span>
+      </div>
+
+      <div class="free-card">
+        <h3>ZeroTrace Guardian</h3>
+        <span class="badge">1 kostenloser Datenschutz-Scan</span>
       </div>
 
     </div>
