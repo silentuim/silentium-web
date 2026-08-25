@@ -1,5 +1,9 @@
 # https://silentiumsupernova.com/
-# Sitio de una sola pagina: todo es indexable.
+# Cuatro versiones de idioma, una URL real cada una y todas indexables:
+#   /        espanol (x-default)
+#   /en/     ingles
+#   /fr/     frances
+#   /de/     aleman
 
 User-agent: *
 Allow: /

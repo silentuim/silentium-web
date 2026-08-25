@@ -1,20 +1,10 @@
-<!DOCTYPE html>
-<!--
-  ARCHIVO GENERADO - NO EDITAR A MANO.
-  Se genera desde _build/template.html + _build/i18n.json con:
-
-      python3 _build/build.py
-
-  Cualquier cambio escrito directamente aqui se perdera en la proxima
-  generacion, y ademas dejaria este idioma desincronizado de los otros tres.
--->
-<html lang="es">
+{{generatedHeader}}<html lang="{{lang}}">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Silentium Supernova — Apps Android privadas, sin rastreo</title>
-<meta name="description" content="Cinco apps Android que funcionan en local, sin analíticas ni cuentas: bienestar mental, sonidos binaurales, limpieza de privacidad y alertas de airdrops.">
-<link rel="canonical" href="https://silentiumsupernova.com/">
+<title>{{meta.title}}</title>
+<meta name="description" content="{{meta.description}}">
+<link rel="canonical" href="{{url}}">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <meta name="theme-color" content="#050a14">
 <link rel="icon" href="/favicon.png" type="image/png" sizes="192x192">
@@ -24,36 +14,30 @@
      contenido nunca depende de JavaScript ni del idioma del navegador. Estos
      hreflang son identicos en las cuatro paginas y se apuntan entre si de forma
      reciproca, incluida la autorreferencia, que es lo que Google exige. -->
-<link rel="alternate" hreflang="es" href="https://silentiumsupernova.com/">
-<link rel="alternate" hreflang="en" href="https://silentiumsupernova.com/en/">
-<link rel="alternate" hreflang="fr" href="https://silentiumsupernova.com/fr/">
-<link rel="alternate" hreflang="de" href="https://silentiumsupernova.com/de/">
-<link rel="alternate" hreflang="x-default" href="https://silentiumsupernova.com/">
+{{hreflang}}
 
 <!-- Open Graph: como se ve el enlace al compartirlo en WhatsApp, Telegram,
      LinkedIn, Facebook... La imagen tiene que ser una URL absoluta y un fichero
      real: un data: URI no lo lee ningun cliente. -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Silentium Supernova">
-<meta property="og:locale" content="es_ES">
-<meta property="og:locale:alternate" content="en_GB">
-<meta property="og:locale:alternate" content="fr_FR">
-<meta property="og:locale:alternate" content="de_DE">
-<meta property="og:url" content="https://silentiumsupernova.com/">
-<meta property="og:title" content="Silentium Supernova — Software que no te vigila">
-<meta property="og:description" content="Cinco apps Android privadas, locales y sin analíticas. Tus datos se quedan en tu dispositivo, nunca en la nube de nadie.">
+<meta property="og:locale" content="{{ogLocale}}">
+{{ogLocaleAlt}}
+<meta property="og:url" content="{{url}}">
+<meta property="og:title" content="{{meta.ogTitle}}">
+<meta property="og:description" content="{{meta.ogDescription}}">
 <meta property="og:image" content="https://silentiumsupernova.com/og-image.jpg">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Silentium Supernova — Software que no te vigila. Cinco apps Android privadas, sin analíticas ni anuncios.">
+<meta property="og:image:alt" content="{{meta.ogImageAlt}}">
 
 <!-- Twitter / X -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Silentium Supernova — Software que no te vigila">
-<meta name="twitter:description" content="Cinco apps Android privadas, locales y sin analíticas. Tus datos se quedan en tu dispositivo, nunca en la nube de nadie.">
+<meta name="twitter:title" content="{{meta.ogTitle}}">
+<meta name="twitter:description" content="{{meta.ogDescription}}">
 <meta name="twitter:image" content="https://silentiumsupernova.com/og-image.jpg">
-<meta name="twitter:image:alt" content="Silentium Supernova — Software que no te vigila. Cinco apps Android privadas, sin analíticas ni anuncios.">
+<meta name="twitter:image:alt" content="{{meta.ogImageAlt}}">
 
 <script type="application/ld+json">
 {
@@ -65,14 +49,14 @@
       "name": "Silentium Supernova",
       "url": "https://silentiumsupernova.com/",
       "logo": "https://silentiumsupernova.com/assets/logo.jpg",
-      "description": "Desarrollo de apps Android local-first: sin analiticas, sin telemetria y sin cuentas en la nube."
+      "description": "{{meta.orgDescription}}"
     },
     {
       "@type": "WebSite",
-      "@id": "https://silentiumsupernova.com/#web",
-      "url": "https://silentiumsupernova.com/",
+      "@id": "{{url}}#web",
+      "url": "{{url}}",
       "name": "Silentium Supernova",
-      "inLanguage": "es",
+      "inLanguage": "{{lang}}",
       "publisher": { "@id": "https://silentiumsupernova.com/#organizacion" }
     }
   ]
@@ -538,85 +522,80 @@
   <nav>
     <div class="brand"><img src="/assets/logo.jpg" alt="">SILENTIUM SUPERNOVA</div>
     <div class="nav-links">
-      <a href="#apps">Apps</a>
-      <a href="#precios">Precios</a>
-      <a href="#blog">Blog</a>
-      <div class="lang-switch" role="group" aria-label="Idioma">
-        <a href="/" hreflang="es" lang="es" aria-current="page">🇪🇸 ES</a>
-        <a href="/en/" hreflang="en" lang="en" title="English">🇬🇧 EN</a>
-        <a href="/fr/" hreflang="fr" lang="fr" title="Français">🇫🇷 FR</a>
-        <a href="/de/" hreflang="de" lang="de" title="Deutsch">🇩🇪 DE</a>
-      </div>
+      <a href="#apps">{{nav.apps}}</a>
+      <a href="#precios">{{nav.precios}}</a>
+      <a href="#blog">{{nav.blog}}</a>
+      {{langSwitch}}
     </div>
   </nav>
 </header>
 
 <section class="hero">
-  <h1>Software que <span class="accent">no te vigila</span>.</h1>
-  <p>Cinco apps privadas, locales y sin analíticas. Tus datos se quedan en tu dispositivo — nunca en la nube de nadie.</p>
-  <a href="#precios" class="btn btn-primary">Ver planes</a>
-  <a href="#apps" class="btn btn-ghost">Explorar apps</a>
+  <h1>{{hero.title}}</h1>
+  <p>{{hero.subtitle}}</p>
+  <a href="#precios" class="btn btn-primary">{{hero.btnPlans}}</a>
+  <a href="#apps" class="btn btn-ghost">{{hero.btnApps}}</a>
 </section>
 
 <section class="section" id="apps">
   <div class="wrap">
-    <div class="section-label">Ecosistema</div>
-    <h2 class="section-title">Nuestras aplicaciones</h2>
+    <div class="section-label">{{apps.label}}</div>
+    <h2 class="section-title">{{apps.title}}</h2>
     <div class="apps-grid">
 
       <div class="app-card">
         <div class="app-icon"><img src="/assets/mindtrace.jpg" alt=""></div>
         <h3>MindTrace</h3>
-        <p>Seguimiento de bienestar mental, 100% local, sin cuentas en la nube.</p>
-        <span class="badge">Disponible</span>
+        <p>{{apps.mindtrace.desc}}</p>
+        <span class="badge">{{apps.available}}</span>
         <div class="app-subscribe">
-          <a href="https://buy.stripe.com/14AaEX43K3HecD45yZcMM00" target="_blank" rel="noopener">Mensual</a>
-          <a href="https://buy.stripe.com/5kQ00j7fWcdKeLc9PfcMM06" target="_blank" rel="noopener" class="annual">Anual</a>
+          <a href="https://buy.stripe.com/14AaEX43K3HecD45yZcMM00" target="_blank" rel="noopener">{{apps.monthly}}</a>
+          <a href="https://buy.stripe.com/5kQ00j7fWcdKeLc9PfcMM06" target="_blank" rel="noopener" class="annual">{{apps.annual}}</a>
         </div>
       </div>
 
       <div class="app-card">
         <div class="app-icon"><img src="/assets/binaural.jpg" alt=""></div>
         <h3>BinauralNature</h3>
-        <p>Sonidos binaurales y ambientes naturales para concentración y descanso.</p>
-        <span class="badge">Disponible</span>
+        <p>{{apps.binaural.desc}}</p>
+        <span class="badge">{{apps.available}}</span>
         <div class="app-subscribe">
-          <a href="https://buy.stripe.com/eVq6oH43Kb9GfPg1iJcMM01" target="_blank" rel="noopener">Mensual</a>
-          <a href="https://buy.stripe.com/bJe5kDgQwgu05aC3qRcMM04" target="_blank" rel="noopener" class="annual">Anual</a>
+          <a href="https://buy.stripe.com/eVq6oH43Kb9GfPg1iJcMM01" target="_blank" rel="noopener">{{apps.monthly}}</a>
+          <a href="https://buy.stripe.com/bJe5kDgQwgu05aC3qRcMM04" target="_blank" rel="noopener" class="annual">{{apps.annual}}</a>
         </div>
       </div>
 
       <div class="app-card">
         <div class="app-icon"><img src="/assets/zerotrace.jpg" alt=""></div>
         <h3>ZeroTrace Guardian</h3>
-        <p>Limpieza y protección de privacidad del dispositivo, sin telemetría.</p>
-        <span class="badge">Disponible</span>
+        <p>{{apps.zerotrace.desc}}</p>
+        <span class="badge">{{apps.available}}</span>
         <div class="app-subscribe">
-          <a href="https://buy.stripe.com/cNiaEXfMsb9G32u1iJcMM03" target="_blank" rel="noopener">Mensual</a>
-          <a href="https://buy.stripe.com/8x2bJ19o40v2cD48LbcMM05" target="_blank" rel="noopener" class="annual">Anual</a>
+          <a href="https://buy.stripe.com/cNiaEXfMsb9G32u1iJcMM03" target="_blank" rel="noopener">{{apps.monthly}}</a>
+          <a href="https://buy.stripe.com/8x2bJ19o40v2cD48LbcMM05" target="_blank" rel="noopener" class="annual">{{apps.annual}}</a>
         </div>
       </div>
 
       <div class="app-card">
         <div class="app-icon"><img src="/assets/airbot.jpg" alt=""></div>
         <h3>AirBot Radar</h3>
-        <p>Alertas de airdrops y muestras gratuitas, con filtro anti-phishing.</p>
-        <span class="badge badge-gift">🎁 Regalo con cualquier suscripción</span>
+        <p>{{apps.airbot.desc}}</p>
+        <span class="badge badge-gift">{{apps.gift}}</span>
         <form class="apk-gate" id="airbotForm" novalidate>
-          <label class="sr-only" for="airbotEmail">Email de tu suscripción</label>
+          <label class="sr-only" for="airbotEmail">{{apps.airbot.emailLabel}}</label>
           <input type="email" id="airbotEmail" name="email" required autocomplete="email"
-                 placeholder="tu@email.com">
-          <button type="submit" id="airbotBtn">Descargar AirBot Radar</button>
+                 placeholder="{{apps.airbot.emailPlaceholder}}">
+          <button type="submit" id="airbotBtn">{{apps.airbot.download}}</button>
           <p class="apk-msg" id="airbotMsg" role="status" aria-live="polite"></p>
-          <p class="apk-note">Descarga reservada a suscriptores. Instalación directa, fuera de tienda.</p>
+          <p class="apk-note">{{apps.airbot.note}}</p>
         </form>
       </div>
 
       <div class="app-card">
         <div class="app-icon">HP</div>
         <h3>Hydra Pocket</h3>
-        <p>Herramientas de bolsillo para desarrolladores y makers.</p>
-        <span class="badge badge-soon">Próximamente</span>
+        <p>{{apps.hydra.desc}}</p>
+        <span class="badge badge-soon">{{apps.soon}}</span>
       </div>
 
     </div>
@@ -625,46 +604,46 @@
 
 <section class="section" id="precios" style="background:var(--panel);">
   <div class="wrap">
-    <div class="section-label">Precios</div>
-    <h2 class="section-title">Elige tu plan</h2>
+    <div class="section-label">{{pricing.label}}</div>
+    <h2 class="section-title">{{pricing.title}}</h2>
     <div class="pricing-grid">
 
       <div class="price-card">
-        <h3>Individual mensual</h3>
-        <div class="price">4,95€<span>/mes</span></div>
+        <h3>{{pricing.monthly.name}}</h3>
+        <div class="price">{{pricing.priceMonthly}}<span>{{pricing.perMonth}}</span></div>
         <ul>
-          <li>1 app a elegir</li>
-          <li>Actualizaciones incluidas</li>
-          <li>Sin anuncios</li>
-          <li>🎁 AirBot Radar de regalo</li>
+          <li>{{pricing.li.chooseApp}}</li>
+          <li>{{pricing.li.updates}}</li>
+          <li>{{pricing.li.noAds}}</li>
+          <li>{{pricing.li.gift}}</li>
         </ul>
-        <a href="#apps" class="btn btn-ghost" style="display:block;text-align:center;margin-top:10px;">Elige tu app</a>
+        <a href="#apps" class="btn btn-ghost" style="display:block;text-align:center;margin-top:10px;">{{pricing.btnChoose}}</a>
       </div>
 
       <div class="price-card">
-        <h3>Individual anual</h3>
-        <div class="old-price">59,40€</div>
-        <div class="price">24,50€<span>/año</span></div>
+        <h3>{{pricing.annual.name}}</h3>
+        <div class="old-price">{{pricing.priceAnnualOld}}</div>
+        <div class="price">{{pricing.priceAnnual}}<span>{{pricing.perYear}}</span></div>
         <ul>
-          <li>1 app a elegir</li>
-          <li>Ahorra más del 50%</li>
-          <li>Sin anuncios</li>
-          <li>🎁 AirBot Radar de regalo</li>
+          <li>{{pricing.li.chooseApp}}</li>
+          <li>{{pricing.li.save50}}</li>
+          <li>{{pricing.li.noAds}}</li>
+          <li>{{pricing.li.gift}}</li>
         </ul>
-        <a href="#apps" class="btn btn-ghost" style="display:block;text-align:center;margin-top:10px;">Elige tu app</a>
+        <a href="#apps" class="btn btn-ghost" style="display:block;text-align:center;margin-top:10px;">{{pricing.btnChoose}}</a>
       </div>
 
-      <div class="price-card featured" data-badge="Mejor precio">
-        <h3>Pack completo anual</h3>
-        <div class="old-price">122,50€</div>
-        <div class="price">49€<span>/año</span></div>
+      <div class="price-card featured" data-badge="{{pricing.best}}">
+        <h3>{{pricing.pack.name}}</h3>
+        <div class="old-price">{{pricing.pricePackOld}}</div>
+        <div class="price">{{pricing.pricePack}}<span>{{pricing.perYear}}</span></div>
         <ul>
-          <li>Todas las apps</li>
-          <li>Acceso a las próximas apps</li>
-          <li>Soporte prioritario</li>
-          <li>🎁 AirBot Radar de regalo</li>
+          <li>{{pricing.li.allApps}}</li>
+          <li>{{pricing.li.futureApps}}</li>
+          <li>{{pricing.li.priority}}</li>
+          <li>{{pricing.li.gift}}</li>
         </ul>
-        <a href="https://buy.stripe.com/aFa5kD7fW0v232u5yZcMM02" target="_blank" rel="noopener" class="btn btn-primary" style="display:block;text-align:center;margin-top:10px;">Suscribirme ahora</a>
+        <a href="https://buy.stripe.com/aFa5kD7fW0v232u5yZcMM02" target="_blank" rel="noopener" class="btn btn-primary" style="display:block;text-align:center;margin-top:10px;">{{pricing.btnSubscribe}}</a>
       </div>
 
     </div>
@@ -673,26 +652,26 @@
 
 <section class="section" id="blog">
   <div class="wrap">
-    <div class="section-label">Blog</div>
-    <h2 class="section-title">Ciberseguridad, sin humo</h2>
+    <div class="section-label">{{blog.label}}</div>
+    <h2 class="section-title">{{blog.title}}</h2>
     <div class="blog-grid">
 
       <div class="blog-card">
-        <span class="tag">Privacidad</span>
-        <h3>Por qué "gratis" casi siempre significa que el producto eres tú</h3>
-        <p>Cómo funciona realmente el modelo de negocio de la mayoría de apps gratuitas del mercado.</p>
+        <span class="tag">{{blog.post1.tag}}</span>
+        <h3>{{blog.post1.title}}</h3>
+        <p>{{blog.post1.desc}}</p>
       </div>
 
       <div class="blog-card">
-        <span class="tag">Seguridad móvil</span>
-        <h3>Permisos de Android que deberías revisar hoy mismo</h3>
-        <p>Una guía rápida para auditar qué apps tienen acceso a más de lo que necesitan.</p>
+        <span class="tag">{{blog.post2.tag}}</span>
+        <h3>{{blog.post2.title}}</h3>
+        <p>{{blog.post2.desc}}</p>
       </div>
 
       <div class="blog-card">
-        <span class="tag">Diseño ético</span>
-        <h3>Dark patterns: reconocerlos para no caer en ellos</h3>
-        <p>Patrones de diseño manipulativos habituales, y cómo Silentium evita usarlos.</p>
+        <span class="tag">{{blog.post3.tag}}</span>
+        <h3>{{blog.post3.title}}</h3>
+        <p>{{blog.post3.desc}}</p>
       </div>
 
     </div>
@@ -701,7 +680,7 @@
 
 <footer>
   <div class="brand"><img src="/assets/logo.jpg" alt="">SILENTIUM SUPERNOVA</div>
-  <p>&copy; 2026 Silentium Supernova. Software local-first, sin analíticas, sin vigilancia.</p>
+  <p>{{footer.copy}}</p>
 </footer>
 
 
@@ -719,45 +698,14 @@
    de AirBot Radar y el aviso de idioma. */
 
 /* Mensajes de la descarga, en el idioma de esta pagina. */
-const T = {
-  "msgChecking": "Comprobando tu suscripción…",
-  "msgOk": "¡Listo! La descarga ha comenzado.",
-  "msgNoSub": "No hemos encontrado una suscripción activa con ese email. Si acabas de suscribirte, espera unos minutos e inténtalo de nuevo.",
-  "msgInvalid": "Escribe un email válido.",
-  "msgError": "No hemos podido completar la descarga. Inténtalo de nuevo más tarde."
-};
+const T = {{airbotMessages}};
 
 /* AVISO DE IDIOMA
    Se muestra como mucho una vez, en la primera visita sin preferencia guardada,
    y unicamente si el navegador esta en uno de los otros tres idiomas. Nunca
    redirige: cada URL sirve siempre su idioma, tambien a los rastreadores. */
-const CURRENT_LANG = 'es';
-const LANG_HINTS = {
-  "es": {
-    "text": "Esta página también está disponible en español.",
-    "cta": "Ver en español",
-    "close": "Cerrar",
-    "path": "/"
-  },
-  "en": {
-    "text": "This page is also available in English.",
-    "cta": "View in English",
-    "close": "Dismiss",
-    "path": "/en/"
-  },
-  "fr": {
-    "text": "Cette page est aussi disponible en français.",
-    "cta": "Voir en français",
-    "close": "Fermer",
-    "path": "/fr/"
-  },
-  "de": {
-    "text": "Diese Seite ist auch auf Deutsch verfügbar.",
-    "cta": "Auf Deutsch ansehen",
-    "close": "Schließen",
-    "path": "/de/"
-  }
-};
+const CURRENT_LANG = '{{lang}}';
+const LANG_HINTS = {{langHints}};
 const LANG_PREF_KEY = 'silentium_lang';
 
 function storeLangPref(lang) {
