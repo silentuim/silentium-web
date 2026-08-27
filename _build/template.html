@@ -337,6 +337,16 @@
   }
   .free-card:hover{border-color:var(--cyan);transform:translateY(-4px);}
   .free-card h3{font-size:17px;margin-bottom:12px;}
+  /* Las dos tarjetas descargables son <a>: heredan color para que el h3 no se
+     vuelva cian, y ocupan la tarjeta entera para que el area pulsable sea la
+     que se ve, no solo el texto. */
+  a.free-card{display:block;color:inherit;}
+  /* ZeroTrace aun no tiene build publicable. Se queda como <div> y ademas
+     renuncia al hover: una tarjeta que se ilumina al pasar el raton promete un
+     clic, y aqui no hay ninguno que dar. */
+  .free-card-soon{opacity:.72;}
+  .free-card-soon:hover{border-color:var(--line);transform:none;}
+  .free-card-soon .badge-soon{display:block;width:fit-content;margin:8px auto 0;}
 
   /* PRICING */
   .pricing-grid{
@@ -638,19 +648,20 @@
     <p class="section-sub">{{freeTrial.subtitle}}</p>
     <div class="free-grid">
 
-      <div class="free-card">
+      <a class="free-card" href="https://api.silentiumsupernova.com/download/mindtrace">
         <h3>MindTrace</h3>
         <span class="badge">{{freeTrial.mindtrace}}</span>
-      </div>
+      </a>
 
-      <div class="free-card">
+      <a class="free-card" href="https://api.silentiumsupernova.com/download/binauralnature">
         <h3>BinauralNature</h3>
         <span class="badge">{{freeTrial.binauralnature}}</span>
-      </div>
+      </a>
 
-      <div class="free-card">
+      <div class="free-card free-card-soon">
         <h3>ZeroTrace Guardian</h3>
         <span class="badge">{{freeTrial.zerotrace}}</span>
+        <span class="badge badge-soon">{{apps.soon}}</span>
       </div>
 
     </div>
