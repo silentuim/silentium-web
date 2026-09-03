@@ -1,5 +1,5 @@
 {
-  "_comment": "Fuente de verdad de los textos del sitio. Editar aqui y ejecutar 'python3 _build/build.py' para regenerar los 4 index.html. Las claves 'nav.*', 'hero.*', 'apps.*', 'pricing.*', 'blog.*' y 'footer.*' vienen del antiguo objeto 'translations' del JS y son las mismas de siempre.",
+  "_comment": "Fuente de verdad de los textos del sitio. Editar aqui y ejecutar 'python3 _build/build.py' para regenerar los 4 index.html. Las claves 'nav.*', 'hero.*', 'apps.*', 'pricing.*', 'blog.*' y 'footer.*' vienen del antiguo objeto 'translations' del JS y son las mismas de siempre. AVISO SOBRE <span translate=\"no\">: los nombres de producto van envueltos asi para que el traductor del navegador no los renombre (Chrome convertia 'Hydra Pocket' en 'Bolsillo Hydra'). Solo se puede en claves que build.py inserta en el CUERPO del HTML. NO usar marcado en 'meta.title' (va dentro de <title>, que no admite etiquetas) ni en 'meta.ogTitle' ni 'meta.ogImageAlt' (van en atributos y build.py los escapa: se veria el <span> escrito). Esas tres no lo necesitan: og y twitter no los traduce el navegador porque no se pintan.",
   "site": {
     "origin": "https://silentiumsupernova.com",
     "order": [
@@ -39,7 +39,7 @@
       "apps.binaural.desc": "Sonidos binaurales y ambientes naturales para concentración y descanso.",
       "apps.zerotrace.desc": "Limpieza y protección de privacidad del dispositivo, sin telemetría.",
       "apps.airbot.desc": "Alertas de airdrops y muestras gratuitas, con filtro anti-phishing.",
-      "apps.airbot.download": "Descargar AirBot Radar",
+      "apps.airbot.download": "Descargar <span translate=\"no\">AirBot Radar</span>",
       "apps.airbot.emailLabel": "Email de tu suscripción",
       "apps.airbot.emailPlaceholder": "tu@email.com",
       "apps.airbot.note": "Descarga reservada a suscriptores. Instalación directa, fuera de tienda.",
@@ -77,7 +77,7 @@
       "pricing.li.allApps": "Todas las apps",
       "pricing.li.futureApps": "Acceso a las próximas apps",
       "pricing.li.priority": "Soporte prioritario",
-      "pricing.li.gift": "🎁 AirBot Radar de regalo",
+      "pricing.li.gift": "🎁 <span translate=\"no\">AirBot Radar</span> de regalo",
       "pricing.perMonth": "/mes",
       "pricing.perYear": "/año",
       "pricing.best": "Mejor precio",
@@ -94,7 +94,7 @@
       "blog.post3.tag": "Diseño ético",
       "blog.post3.title": "Dark patterns: reconocerlos para no caer en ellos",
       "blog.post3.desc": "Patrones de diseño manipulativos habituales, y cómo Silentium evita usarlos.",
-      "footer.copy": "&copy; 2026 Silentium Supernova. Software local-first, sin analíticas, sin vigilancia.",
+      "footer.copy": "&copy; 2026 <span translate=\"no\">Silentium Supernova</span>. Software local-first, sin analíticas, sin vigilancia.",
       "freeTrial.hydrapocket": "2 plantillas gratis para siempre"
     },
     "en": {
@@ -125,7 +125,7 @@
       "apps.binaural.desc": "Binaural sounds and nature ambiences for focus and rest.",
       "apps.zerotrace.desc": "Device privacy cleanup and protection, no telemetry.",
       "apps.airbot.desc": "Airdrop and free sample alerts, with anti-phishing filtering.",
-      "apps.airbot.download": "Download AirBot Radar",
+      "apps.airbot.download": "Download <span translate=\"no\">AirBot Radar</span>",
       "apps.airbot.emailLabel": "Your subscription email",
       "apps.airbot.emailPlaceholder": "you@email.com",
       "apps.airbot.note": "Download reserved for subscribers. Direct install, outside any store.",
@@ -163,7 +163,7 @@
       "pricing.li.allApps": "All apps",
       "pricing.li.futureApps": "Access to future apps",
       "pricing.li.priority": "Priority support",
-      "pricing.li.gift": "🎁 Free AirBot Radar",
+      "pricing.li.gift": "🎁 Free <span translate=\"no\">AirBot Radar</span>",
       "pricing.perMonth": "/month",
       "pricing.perYear": "/year",
       "pricing.best": "Best value",
@@ -180,7 +180,7 @@
       "blog.post3.tag": "Ethical design",
       "blog.post3.title": "Dark patterns: spotting them so you don't fall for them",
       "blog.post3.desc": "Common manipulative design patterns, and how Silentium avoids them.",
-      "footer.copy": "&copy; 2026 Silentium Supernova. Local-first software, no analytics, no surveillance.",
+      "footer.copy": "&copy; 2026 <span translate=\"no\">Silentium Supernova</span>. Local-first software, no analytics, no surveillance.",
       "freeTrial.hydrapocket": "2 free templates forever"
     },
     "fr": {
@@ -211,7 +211,7 @@
       "apps.binaural.desc": "Sons binauraux et ambiances naturelles pour la concentration et le repos.",
       "apps.zerotrace.desc": "Nettoyage et protection de la vie privée de l'appareil, sans télémétrie.",
       "apps.airbot.desc": "Alertes airdrops et échantillons gratuits, avec filtre anti-phishing.",
-      "apps.airbot.download": "Télécharger AirBot Radar",
+      "apps.airbot.download": "Télécharger <span translate=\"no\">AirBot Radar</span>",
       "apps.airbot.emailLabel": "E-mail de votre abonnement",
       "apps.airbot.emailPlaceholder": "vous@email.com",
       "apps.airbot.note": "Téléchargement réservé aux abonnés. Installation directe, hors boutique.",
@@ -249,7 +249,7 @@
       "pricing.li.allApps": "Toutes les apps",
       "pricing.li.futureApps": "Accès aux futures apps",
       "pricing.li.priority": "Support prioritaire",
-      "pricing.li.gift": "🎁 AirBot Radar offert",
+      "pricing.li.gift": "🎁 <span translate=\"no\">AirBot Radar</span> offert",
       "pricing.perMonth": "/mois",
       "pricing.perYear": "/an",
       "pricing.best": "Meilleur prix",
@@ -266,7 +266,7 @@
       "blog.post3.tag": "Design éthique",
       "blog.post3.title": "Dark patterns : les repérer pour ne pas tomber dedans",
       "blog.post3.desc": "Les schémas de conception manipulateurs courants, et comment Silentium les évite.",
-      "footer.copy": "&copy; 2026 Silentium Supernova. Logiciel local-first, sans analytique, sans surveillance.",
+      "footer.copy": "&copy; 2026 <span translate=\"no\">Silentium Supernova</span>. Logiciel local-first, sans analytique, sans surveillance.",
       "freeTrial.hydrapocket": "2 modèles gratuits pour toujours"
     },
     "de": {
@@ -297,7 +297,7 @@
       "apps.binaural.desc": "Binaurale Klänge und Naturklänge für Konzentration und Erholung.",
       "apps.zerotrace.desc": "Bereinigung und Schutz der Geräteprivatsphäre, ohne Telemetrie.",
       "apps.airbot.desc": "Airdrop- und Gratisproben-Alarme mit Anti-Phishing-Filter.",
-      "apps.airbot.download": "AirBot Radar herunterladen",
+      "apps.airbot.download": "<span translate=\"no\">AirBot Radar</span> herunterladen",
       "apps.airbot.emailLabel": "E-Mail deines Abos",
       "apps.airbot.emailPlaceholder": "du@email.com",
       "apps.airbot.note": "Download nur für Abonnenten. Direkte Installation, außerhalb jedes Stores.",
@@ -335,7 +335,7 @@
       "pricing.li.allApps": "Alle Apps",
       "pricing.li.futureApps": "Zugang zu zukünftigen Apps",
       "pricing.li.priority": "Prioritäts-Support",
-      "pricing.li.gift": "🎁 AirBot Radar gratis",
+      "pricing.li.gift": "🎁 <span translate=\"no\">AirBot Radar</span> gratis",
       "pricing.perMonth": "/Monat",
       "pricing.perYear": "/Jahr",
       "pricing.best": "Bester Preis",
@@ -352,7 +352,7 @@
       "blog.post3.tag": "Ethisches Design",
       "blog.post3.title": "Dark Patterns: erkennen, um nicht darauf hereinzufallen",
       "blog.post3.desc": "Gängige manipulative Designmuster, und wie Silentium sie vermeidet.",
-      "footer.copy": "&copy; 2026 Silentium Supernova. Local-first Software, ohne Analytics, ohne Überwachung.",
+      "footer.copy": "&copy; 2026 <span translate=\"no\">Silentium Supernova</span>. Local-first Software, ohne Analytics, ohne Überwachung.",
       "freeTrial.hydrapocket": "2 Vorlagen für immer kostenlos"
     }
   }
