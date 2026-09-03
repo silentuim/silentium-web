@@ -240,14 +240,39 @@
   .apps-grid{
     display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
     gap:20px;
+    /* La pildora de la destacada sobresale 13px por arriba. */
+    padding-top:13px;
   }
   .app-card{
     background:linear-gradient(180deg, var(--panel-raised), var(--panel));
     border:1px solid var(--line);
     border-radius:14px;padding:26px;
     transition:border-color .2s ease, transform .2s ease;
+    position:relative;
   }
   .app-card:hover{border-color:var(--cyan);transform:translateY(-4px);}
+
+  /* Producto estrella. Mismo lenguaje visual que .price-card.featured del pack
+     —borde dorado, degradado dorado, pildora con el texto de data-badge— para
+     que destacar no signifique inventarse un estilo nuevo.
+
+     Ocupa la fila entera: `1 / -1` vale igual con una columna que con cuatro,
+     asi que en el movil no cambia nada y en pantalla ancha queda como una
+     tarjeta de portada por encima de las otras cuatro. */
+  .app-card.featured{
+    grid-column:1 / -1;
+    border:1px solid var(--gold);
+    background:linear-gradient(180deg, rgba(232,185,79,0.08), var(--panel-raised));
+    padding-top:34px;
+  }
+  .app-card.featured::before{
+    content:attr(data-badge);
+    position:absolute;top:-13px;left:26px;
+    background:var(--gold);color:var(--navy);font-size:11px;font-weight:700;
+    padding:4px 14px;border-radius:20px;letter-spacing:0.5px;
+  }
+  .app-card.featured:hover{border-color:var(--gold);}
+  .app-card.featured p{font-size:15px;max-width:70ch;}
   .app-icon{
     width:44px;height:44px;border-radius:10px;
     background:linear-gradient(135deg, var(--panel-raised), var(--void));
@@ -597,6 +622,17 @@
     <h2 class="section-title">Nuestras aplicaciones</h2>
     <div class="apps-grid">
 
+      <div class="app-card featured" data-badge="Producto estrella">
+        <div class="app-icon"><img src="/assets/hydra.jpg" alt=""></div>
+        <h3 translate="no">Hydra Pocket</h3>
+        <p>Una app, infinitas herramientas.<span translate="no"> Hydra Pocket </span>es la única app del ecosistema que no hace una sola cosa: tú le dices qué necesitas y ella te construye la herramienta a medida — listas de tareas, control de gastos, inventario, clientes y trabajos, mantenimiento de vehículos, gestión de proyectos, autónomos, mini ERP personal. Sin programar nada.</p>
+        <span class="badge">Disponible</span>
+        <div class="app-subscribe">
+          <a href="https://buy.stripe.com/14A6oHgQwfpW46yd1rcMM08" target="_blank" rel="noopener">Mensual</a>
+          <a href="https://buy.stripe.com/8x200j57O91y6eG9PfcMM09" target="_blank" rel="noopener" class="annual">Anual</a>
+        </div>
+      </div>
+
       <div class="app-card">
         <div class="app-icon"><img src="/assets/mindtrace.jpg" alt=""></div>
         <h3 translate="no">MindTrace</h3>
@@ -643,17 +679,6 @@
           <p class="apk-msg" id="airbotMsg" role="status" aria-live="polite"></p>
           <p class="apk-note">Descarga reservada a suscriptores. Instalación directa, fuera de tienda.</p>
         </form>
-      </div>
-
-      <div class="app-card">
-        <div class="app-icon"><img src="/assets/hydra.jpg" alt=""></div>
-        <h3 translate="no">Hydra Pocket</h3>
-        <p>Crea tus propias herramientas sin programar: tareas, gastos, inventario, clientes.</p>
-        <span class="badge">Disponible</span>
-        <div class="app-subscribe">
-          <a href="https://buy.stripe.com/14A6oHgQwfpW46yd1rcMM08" target="_blank" rel="noopener">Mensual</a>
-          <a href="https://buy.stripe.com/8x200j57O91y6eG9PfcMM09" target="_blank" rel="noopener" class="annual">Anual</a>
-        </div>
       </div>
 
     </div>

@@ -95,7 +95,9 @@
       "blog.post3.title": "Dark patterns: reconocerlos para no caer en ellos",
       "blog.post3.desc": "Patrones de diseño manipulativos habituales, y cómo Silentium evita usarlos.",
       "footer.copy": "&copy; 2026<span translate=\"no\"> Silentium Supernova</span>. Software local-first, sin analíticas, sin vigilancia.",
-      "freeTrial.hydrapocket": "2 plantillas gratis para siempre"
+      "freeTrial.hydrapocket": "2 plantillas gratis para siempre",
+      "apps.featured": "Producto estrella",
+      "apps.hydra.descFeatured": "Una app, infinitas herramientas.<span translate=\"no\"> Hydra Pocket </span>es la única app del ecosistema que no hace una sola cosa: tú le dices qué necesitas y ella te construye la herramienta a medida — listas de tareas, control de gastos, inventario, clientes y trabajos, mantenimiento de vehículos, gestión de proyectos, autónomos, mini ERP personal. Sin programar nada."
     },
     "en": {
       "lang": "en",
@@ -181,7 +183,9 @@
       "blog.post3.title": "Dark patterns: spotting them so you don't fall for them",
       "blog.post3.desc": "Common manipulative design patterns, and how Silentium avoids them.",
       "footer.copy": "&copy; 2026<span translate=\"no\"> Silentium Supernova</span>. Local-first software, no analytics, no surveillance.",
-      "freeTrial.hydrapocket": "2 free templates forever"
+      "freeTrial.hydrapocket": "2 free templates forever",
+      "apps.featured": "Featured product",
+      "apps.hydra.descFeatured": "One app, endless tools.<span translate=\"no\"> Hydra Pocket </span>is the only app in the ecosystem that doesn't do just one thing — you tell it what you need, and it builds the tool for you: task lists, expense tracking, inventory, clients and jobs, vehicle maintenance, project management, freelance work, personal mini ERP. No coding required."
     },
     "fr": {
       "lang": "fr",
@@ -267,7 +271,9 @@
       "blog.post3.title": "Dark patterns : les repérer pour ne pas tomber dedans",
       "blog.post3.desc": "Les schémas de conception manipulateurs courants, et comment Silentium les évite.",
       "footer.copy": "&copy; 2026<span translate=\"no\"> Silentium Supernova</span>. Logiciel local-first, sans analytique, sans surveillance.",
-      "freeTrial.hydrapocket": "2 modèles gratuits pour toujours"
+      "freeTrial.hydrapocket": "2 modèles gratuits pour toujours",
+      "apps.featured": "Produit vedette",
+      "apps.hydra.descFeatured": "Une app, des outils infinis.<span translate=\"no\"> Hydra Pocket </span>est la seule app de l'écosystème qui ne fait pas qu'une seule chose — dites-lui ce dont vous avez besoin, et elle vous construit l'outil : listes de tâches, suivi des dépenses, inventaire, clients et travaux, entretien de véhicules, gestion de projets, travail indépendant, mini ERP personnel. Sans coder."
     },
     "de": {
       "lang": "de",
@@ -353,7 +359,9 @@
       "blog.post3.title": "Dark Patterns: erkennen, um nicht darauf hereinzufallen",
       "blog.post3.desc": "Gängige manipulative Designmuster, und wie Silentium sie vermeidet.",
       "footer.copy": "&copy; 2026<span translate=\"no\"> Silentium Supernova</span>. Local-first Software, ohne Analytics, ohne Überwachung.",
-      "freeTrial.hydrapocket": "2 Vorlagen für immer kostenlos"
+      "freeTrial.hydrapocket": "2 Vorlagen für immer kostenlos",
+      "apps.featured": "Empfohlenes Produkt",
+      "apps.hydra.descFeatured": "Eine App, endlose Werkzeuge.<span translate=\"no\"> Hydra Pocket </span>ist die einzige App im Ökosystem, die nicht nur eine Sache tut — sag ihr, was du brauchst, und sie baut dir das Werkzeug: Aufgabenlisten, Ausgabenverfolgung, Inventar, Kunden und Aufträge, Fahrzeugwartung, Projektmanagement, Selbstständigkeit, persönliches Mini-ERP. Ohne Programmieren."
     }
   }
 }
