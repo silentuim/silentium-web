@@ -398,13 +398,62 @@
 
   /* BLOG */
   .blog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;}
+  /* La tarjeta es un <a>: el area clicable es la tarjeta entera, no solo el
+     titulo. Hereda el color del texto para que no se pinte de cian de enlace. */
   .blog-card{
+    display:flex;flex-direction:column;
     background:var(--panel-raised);border:1px solid var(--line);
     border-radius:14px;padding:24px;
+    color:var(--text);
+    transition:border-color .2s ease, transform .2s ease;
   }
+  .blog-card:hover{border-color:var(--cyan);transform:translateY(-4px);}
+  .blog-card:hover h3{color:var(--cyan);}
   .blog-card .tag{color:var(--gold);font-size:12px;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;display:block;}
-  .blog-card h3{font-size:17px;margin-bottom:10px;}
+  .blog-card h3{font-size:17px;margin-bottom:10px;transition:color .2s ease;}
   .blog-card p{color:var(--text-dim);font-size:14px;}
+  .blog-card time{
+    display:block;margin-top:auto;padding-top:14px;
+    color:var(--muted);font-size:12.5px;letter-spacing:0.3px;
+  }
+  .blog-all{text-align:center;margin-top:36px;}
+  .blog-all a{font-size:14.5px;font-weight:600;}
+
+  /* ARTICULO
+     Solo lo usan las paginas de /blog/: viven aqui para que el sitio entero
+     siga teniendo una unica hoja de estilos, la de esta plantilla. */
+  .post{padding:56px 24px 70px;position:relative;z-index:2;}
+  .post-wrap{max-width:720px;margin:0 auto;}
+  .post-head{margin-bottom:38px;}
+  .post-head .tag{
+    color:var(--gold);font-size:12px;letter-spacing:2px;
+    text-transform:uppercase;display:block;margin-bottom:14px;
+  }
+  .post-head h1{
+    font-size:clamp(27px,4.2vw,40px);font-weight:700;
+    letter-spacing:-0.5px;line-height:1.22;margin-bottom:16px;
+  }
+  .post-lead{color:var(--text-dim);font-size:17px;margin-bottom:18px;}
+  .post-meta{color:var(--muted);font-size:13px;letter-spacing:0.3px;}
+  .post-body h2{
+    font-size:clamp(19px,2.4vw,23px);font-weight:700;
+    margin:38px 0 14px;letter-spacing:-0.2px;
+  }
+  .post-body p{margin-bottom:18px;font-size:16.5px;line-height:1.75;color:var(--text);}
+  .post-body ul{list-style:none;margin:0 0 22px;}
+  .post-body li{
+    position:relative;padding:7px 0 7px 24px;
+    font-size:16px;line-height:1.7;color:var(--text-dim);
+  }
+  .post-body li::before{
+    content:"";position:absolute;left:2px;top:17px;
+    width:7px;height:7px;border-radius:50%;background:var(--cyan);
+  }
+  .post-nav{
+    margin-top:52px;padding-top:26px;border-top:1px solid var(--line);
+    display:flex;gap:20px;flex-wrap:wrap;justify-content:space-between;
+    font-size:14.5px;
+  }
 
   /* FOOTER */
   footer{
@@ -529,6 +578,8 @@
 
     .blog-grid{grid-template-columns:1fr;gap:16px;}
     .blog-card{padding:20px;}
+    .post{padding:36px 20px 52px;}
+    .post-body p{font-size:16px;}
 
     footer{padding:32px 16px;}
     footer .brand{flex-wrap:wrap;justify-content:center;font-size:15px;}
@@ -580,9 +631,9 @@
   <nav>
     <div class="brand" translate="no"><img src="/assets/logo.jpg" alt="">SILENTIUM SUPERNOVA</div>
     <div class="nav-links">
-      <a href="#apps">{{nav.apps}}</a>
-      <a href="#precios">{{nav.precios}}</a>
-      <a href="#blog">{{nav.blog}}</a>
+      <a href="{{home}}#apps">{{nav.apps}}</a>
+      <a href="{{home}}#precios">{{nav.precios}}</a>
+      <a href="{{blogIndex}}">{{nav.blog}}</a>
       {{langSwitch}}
     </div>
   </nav>
@@ -749,25 +800,29 @@
     <h2 class="section-title">{{blog.title}}</h2>
     <div class="blog-grid">
 
-      <div class="blog-card">
+      <a class="blog-card" href="{{blog.post1.href}}">
         <span class="tag">{{blog.post1.tag}}</span>
         <h3>{{blog.post1.title}}</h3>
         <p>{{blog.post1.desc}}</p>
-      </div>
+        <time datetime="{{blog.post1.dateIso}}">{{blog.post1.date}}</time>
+      </a>
 
-      <div class="blog-card">
+      <a class="blog-card" href="{{blog.post2.href}}">
         <span class="tag">{{blog.post2.tag}}</span>
         <h3>{{blog.post2.title}}</h3>
         <p>{{blog.post2.desc}}</p>
-      </div>
+        <time datetime="{{blog.post2.dateIso}}">{{blog.post2.date}}</time>
+      </a>
 
-      <div class="blog-card">
+      <a class="blog-card" href="{{blog.post3.href}}">
         <span class="tag">{{blog.post3.tag}}</span>
         <h3>{{blog.post3.title}}</h3>
         <p>{{blog.post3.desc}}</p>
-      </div>
+        <time datetime="{{blog.post3.dateIso}}">{{blog.post3.date}}</time>
+      </a>
 
     </div>
+    <p class="blog-all"><a href="{{blogIndex}}">{{blog.backToIndex}} &rarr;</a></p>
   </div>
 </section>
 

@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  Una entrada por idioma. Cada una repite el juego completo de hreflang,
-  igual que el <head> de las paginas: es la misma senal por dos vias.
+  Una entrada por idioma y por pagina: las cuatro homes, los cuatro
+  indices del blog y los cuatro idiomas de cada articulo. Cada una
+  repite el juego completo de hreflang, igual que el <head> de las
+  paginas: es la misma senal por dos vias.
   Generado por _build/build.py; no editar a mano.
 -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
@@ -13,7 +15,7 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://silentiumsupernova.com/fr/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://silentiumsupernova.com/de/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://silentiumsupernova.com/"/>
-    <lastmod>2026-09-03</lastmod>
+    <lastmod>2026-09-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -24,7 +26,7 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://silentiumsupernova.com/fr/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://silentiumsupernova.com/de/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://silentiumsupernova.com/"/>
-    <lastmod>2026-09-03</lastmod>
+    <lastmod>2026-09-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -35,7 +37,7 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://silentiumsupernova.com/fr/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://silentiumsupernova.com/de/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://silentiumsupernova.com/"/>
-    <lastmod>2026-09-03</lastmod>
+    <lastmod>2026-09-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -46,8 +48,184 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://silentiumsupernova.com/fr/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://silentiumsupernova.com/de/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://silentiumsupernova.com/"/>
-    <lastmod>2026-09-03</lastmod>
+    <lastmod>2026-09-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://silentiumsupernova.com/blog/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://silentiumsupernova.com/blog/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://silentiumsupernova.com/en/blog/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://silentiumsupernova.com/fr/blog/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://silentiumsupernova.com/de/blog/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://silentiumsupernova.com/blog/"/>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://silentiumsupernova.com/en/blog/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://silentiumsupernova.com/blog/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://silentiumsupernova.com/en/blog/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://silentiumsupernova.com/fr/blog/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://silentiumsupernova.com/de/blog/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://silentiumsupernova.com/blog/"/>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://silentiumsupernova.com/fr/blog/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://silentiumsupernova.com/blog/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://silentiumsupernova.com/en/blog/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://silentiumsupernova.com/fr/blog/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://silentiumsupernova.com/de/blog/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://silentiumsupernova.com/blog/"/>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://silentiumsupernova.com/de/blog/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://silentiumsupernova.com/blog/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://silentiumsupernova.com/en/blog/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://silentiumsupernova.com/fr/blog/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://silentiumsupernova.com/de/blog/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://silentiumsupernova.com/blog/"/>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://silentiumsupernova.com/blog/why-free-costs-something/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://silentiumsupernova.com/blog/why-free-costs-something/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://silentiumsupernova.com/en/blog/why-free-costs-something/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://silentiumsupernova.com/fr/blog/why-free-costs-something/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://silentiumsupernova.com/de/blog/why-free-costs-something/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://silentiumsupernova.com/blog/why-free-costs-something/"/>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://silentiumsupernova.com/en/blog/why-free-costs-something/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://silentiumsupernova.com/blog/why-free-costs-something/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://silentiumsupernova.com/en/blog/why-free-costs-something/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://silentiumsupernova.com/fr/blog/why-free-costs-something/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://silentiumsupernova.com/de/blog/why-free-costs-something/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://silentiumsupernova.com/blog/why-free-costs-something/"/>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://silentiumsupernova.com/fr/blog/why-free-costs-something/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://silentiumsupernova.com/blog/why-free-costs-something/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://silentiumsupernova.com/en/blog/why-free-costs-something/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://silentiumsupernova.com/fr/blog/why-free-costs-something/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://silentiumsupernova.com/de/blog/why-free-costs-something/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://silentiumsupernova.com/blog/why-free-costs-something/"/>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://silentiumsupernova.com/de/blog/why-free-costs-something/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://silentiumsupernova.com/blog/why-free-costs-something/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://silentiumsupernova.com/en/blog/why-free-costs-something/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://silentiumsupernova.com/fr/blog/why-free-costs-something/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://silentiumsupernova.com/de/blog/why-free-costs-something/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://silentiumsupernova.com/blog/why-free-costs-something/"/>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://silentiumsupernova.com/blog/android-permissions-worth-checking/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://silentiumsupernova.com/blog/android-permissions-worth-checking/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://silentiumsupernova.com/en/blog/android-permissions-worth-checking/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://silentiumsupernova.com/fr/blog/android-permissions-worth-checking/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://silentiumsupernova.com/de/blog/android-permissions-worth-checking/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://silentiumsupernova.com/blog/android-permissions-worth-checking/"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://silentiumsupernova.com/en/blog/android-permissions-worth-checking/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://silentiumsupernova.com/blog/android-permissions-worth-checking/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://silentiumsupernova.com/en/blog/android-permissions-worth-checking/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://silentiumsupernova.com/fr/blog/android-permissions-worth-checking/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://silentiumsupernova.com/de/blog/android-permissions-worth-checking/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://silentiumsupernova.com/blog/android-permissions-worth-checking/"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://silentiumsupernova.com/fr/blog/android-permissions-worth-checking/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://silentiumsupernova.com/blog/android-permissions-worth-checking/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://silentiumsupernova.com/en/blog/android-permissions-worth-checking/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://silentiumsupernova.com/fr/blog/android-permissions-worth-checking/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://silentiumsupernova.com/de/blog/android-permissions-worth-checking/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://silentiumsupernova.com/blog/android-permissions-worth-checking/"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://silentiumsupernova.com/de/blog/android-permissions-worth-checking/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://silentiumsupernova.com/blog/android-permissions-worth-checking/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://silentiumsupernova.com/en/blog/android-permissions-worth-checking/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://silentiumsupernova.com/fr/blog/android-permissions-worth-checking/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://silentiumsupernova.com/de/blog/android-permissions-worth-checking/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://silentiumsupernova.com/blog/android-permissions-worth-checking/"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://silentiumsupernova.com/blog/dark-patterns-how-to-spot-them/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://silentiumsupernova.com/blog/dark-patterns-how-to-spot-them/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://silentiumsupernova.com/en/blog/dark-patterns-how-to-spot-them/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://silentiumsupernova.com/fr/blog/dark-patterns-how-to-spot-them/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://silentiumsupernova.com/de/blog/dark-patterns-how-to-spot-them/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://silentiumsupernova.com/blog/dark-patterns-how-to-spot-them/"/>
+    <lastmod>2026-08-26</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://silentiumsupernova.com/en/blog/dark-patterns-how-to-spot-them/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://silentiumsupernova.com/blog/dark-patterns-how-to-spot-them/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://silentiumsupernova.com/en/blog/dark-patterns-how-to-spot-them/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://silentiumsupernova.com/fr/blog/dark-patterns-how-to-spot-them/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://silentiumsupernova.com/de/blog/dark-patterns-how-to-spot-them/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://silentiumsupernova.com/blog/dark-patterns-how-to-spot-them/"/>
+    <lastmod>2026-08-26</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://silentiumsupernova.com/fr/blog/dark-patterns-how-to-spot-them/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://silentiumsupernova.com/blog/dark-patterns-how-to-spot-them/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://silentiumsupernova.com/en/blog/dark-patterns-how-to-spot-them/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://silentiumsupernova.com/fr/blog/dark-patterns-how-to-spot-them/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://silentiumsupernova.com/de/blog/dark-patterns-how-to-spot-them/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://silentiumsupernova.com/blog/dark-patterns-how-to-spot-them/"/>
+    <lastmod>2026-08-26</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://silentiumsupernova.com/de/blog/dark-patterns-how-to-spot-them/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://silentiumsupernova.com/blog/dark-patterns-how-to-spot-them/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://silentiumsupernova.com/en/blog/dark-patterns-how-to-spot-them/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://silentiumsupernova.com/fr/blog/dark-patterns-how-to-spot-them/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://silentiumsupernova.com/de/blog/dark-patterns-how-to-spot-them/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://silentiumsupernova.com/blog/dark-patterns-how-to-spot-them/"/>
+    <lastmod>2026-08-26</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
   </url>
 </urlset>

@@ -414,13 +414,62 @@
 
   /* BLOG */
   .blog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;}
+  /* La tarjeta es un <a>: el area clicable es la tarjeta entera, no solo el
+     titulo. Hereda el color del texto para que no se pinte de cian de enlace. */
   .blog-card{
+    display:flex;flex-direction:column;
     background:var(--panel-raised);border:1px solid var(--line);
     border-radius:14px;padding:24px;
+    color:var(--text);
+    transition:border-color .2s ease, transform .2s ease;
   }
+  .blog-card:hover{border-color:var(--cyan);transform:translateY(-4px);}
+  .blog-card:hover h3{color:var(--cyan);}
   .blog-card .tag{color:var(--gold);font-size:12px;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;display:block;}
-  .blog-card h3{font-size:17px;margin-bottom:10px;}
+  .blog-card h3{font-size:17px;margin-bottom:10px;transition:color .2s ease;}
   .blog-card p{color:var(--text-dim);font-size:14px;}
+  .blog-card time{
+    display:block;margin-top:auto;padding-top:14px;
+    color:var(--muted);font-size:12.5px;letter-spacing:0.3px;
+  }
+  .blog-all{text-align:center;margin-top:36px;}
+  .blog-all a{font-size:14.5px;font-weight:600;}
+
+  /* ARTICULO
+     Solo lo usan las paginas de /blog/: viven aqui para que el sitio entero
+     siga teniendo una unica hoja de estilos, la de esta plantilla. */
+  .post{padding:56px 24px 70px;position:relative;z-index:2;}
+  .post-wrap{max-width:720px;margin:0 auto;}
+  .post-head{margin-bottom:38px;}
+  .post-head .tag{
+    color:var(--gold);font-size:12px;letter-spacing:2px;
+    text-transform:uppercase;display:block;margin-bottom:14px;
+  }
+  .post-head h1{
+    font-size:clamp(27px,4.2vw,40px);font-weight:700;
+    letter-spacing:-0.5px;line-height:1.22;margin-bottom:16px;
+  }
+  .post-lead{color:var(--text-dim);font-size:17px;margin-bottom:18px;}
+  .post-meta{color:var(--muted);font-size:13px;letter-spacing:0.3px;}
+  .post-body h2{
+    font-size:clamp(19px,2.4vw,23px);font-weight:700;
+    margin:38px 0 14px;letter-spacing:-0.2px;
+  }
+  .post-body p{margin-bottom:18px;font-size:16.5px;line-height:1.75;color:var(--text);}
+  .post-body ul{list-style:none;margin:0 0 22px;}
+  .post-body li{
+    position:relative;padding:7px 0 7px 24px;
+    font-size:16px;line-height:1.7;color:var(--text-dim);
+  }
+  .post-body li::before{
+    content:"";position:absolute;left:2px;top:17px;
+    width:7px;height:7px;border-radius:50%;background:var(--cyan);
+  }
+  .post-nav{
+    margin-top:52px;padding-top:26px;border-top:1px solid var(--line);
+    display:flex;gap:20px;flex-wrap:wrap;justify-content:space-between;
+    font-size:14.5px;
+  }
 
   /* FOOTER */
   footer{
@@ -545,6 +594,8 @@
 
     .blog-grid{grid-template-columns:1fr;gap:16px;}
     .blog-card{padding:20px;}
+    .post{padding:36px 20px 52px;}
+    .post-body p{font-size:16px;}
 
     footer{padding:32px 16px;}
     footer .brand{flex-wrap:wrap;justify-content:center;font-size:15px;}
@@ -596,9 +647,9 @@
   <nav>
     <div class="brand" translate="no"><img src="/assets/logo.jpg" alt="">SILENTIUM SUPERNOVA</div>
     <div class="nav-links">
-      <a href="#apps">Apps</a>
-      <a href="#precios">Precios</a>
-      <a href="#blog">Blog</a>
+      <a href="/#apps">Apps</a>
+      <a href="/#precios">Precios</a>
+      <a href="/blog/">Blog</a>
       <div class="lang-switch" role="group" aria-label="Idioma">
         <a href="/" hreflang="es" lang="es" aria-current="page">🇪🇸 ES</a>
         <a href="/en/" hreflang="en" lang="en" title="English">🇬🇧 EN</a>
@@ -770,25 +821,29 @@
     <h2 class="section-title">Ciberseguridad, sin humo</h2>
     <div class="blog-grid">
 
-      <div class="blog-card">
+      <a class="blog-card" href="/blog/why-free-costs-something/">
         <span class="tag">Privacidad</span>
         <h3>Por qué "gratis" casi siempre significa que el producto eres tú</h3>
         <p>Cómo funciona realmente el modelo de negocio de la mayoría de apps gratuitas del mercado.</p>
-      </div>
+        <time datetime="2026-09-09">9 de septiembre de 2026</time>
+      </a>
 
-      <div class="blog-card">
+      <a class="blog-card" href="/blog/android-permissions-worth-checking/">
         <span class="tag">Seguridad móvil</span>
         <h3>Permisos de Android que deberías revisar hoy mismo</h3>
         <p>Una guía rápida para auditar qué apps tienen acceso a más de lo que necesitan.</p>
-      </div>
+        <time datetime="2026-09-02">2 de septiembre de 2026</time>
+      </a>
 
-      <div class="blog-card">
+      <a class="blog-card" href="/blog/dark-patterns-how-to-spot-them/">
         <span class="tag">Diseño ético</span>
         <h3>Dark patterns: reconocerlos para no caer en ellos</h3>
         <p>Patrones de diseño manipulativos habituales, y cómo Silentium evita usarlos.</p>
-      </div>
+        <time datetime="2026-08-26">26 de agosto de 2026</time>
+      </a>
 
     </div>
+    <p class="blog-all"><a href="/blog/">Todos los artículos &rarr;</a></p>
   </div>
 </section>
 

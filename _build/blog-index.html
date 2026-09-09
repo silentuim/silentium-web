@@ -1,0 +1,85 @@
+{{generatedHeader}}<html lang="{{lang}}">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{blog.metaTitle}}</title>
+<meta name="description" content="{{blog.metaDescription}}">
+<link rel="canonical" href="{{url}}">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="theme-color" content="#050a14">
+<link rel="icon" href="/favicon.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+{{hreflang}}
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Silentium Supernova">
+<meta property="og:locale" content="{{ogLocale}}">
+{{ogLocaleAlt}}
+<meta property="og:url" content="{{url}}">
+<meta property="og:title" content="{{blog.metaTitle}}">
+<meta property="og:description" content="{{blog.metaDescription}}">
+<meta property="og:image" content="https://silentiumsupernova.com/og-image.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="{{meta.ogImageAlt}}">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{blog.metaTitle}}">
+<meta name="twitter:description" content="{{blog.metaDescription}}">
+<meta name="twitter:image" content="https://silentiumsupernova.com/og-image.jpg">
+<meta name="twitter:image:alt" content="{{meta.ogImageAlt}}">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://silentiumsupernova.com/#organizacion",
+      "name": "Silentium Supernova",
+      "url": "https://silentiumsupernova.com/",
+      "logo": "https://silentiumsupernova.com/assets/logo.jpg",
+      "description": "{{meta.orgDescription}}"
+    },
+    {
+      "@type": "Blog",
+      "@id": "{{url}}#blog",
+      "url": "{{url}}",
+      "name": "{{blog.metaTitle}}",
+      "description": "{{blog.metaDescription}}",
+      "inLanguage": "{{lang}}",
+      "publisher": { "@id": "https://silentiumsupernova.com/#organizacion" },
+      "blogPost": {{blogPostList}}
+    }
+  ]
+}
+</script>
+{{styles}}
+</head>
+<body>
+
+{{siteTop}}
+
+<section class="hero">
+  <h1>{{blog.title}}</h1>
+  <p>{{blog.intro}}</p>
+</section>
+
+<section class="section" id="articulos">
+  <div class="wrap">
+    <div class="section-label">{{blog.label}}</div>
+    <div class="blog-grid">
+
+{{blogCards}}
+
+    </div>
+    <p class="blog-all"><a href="{{home}}">&larr; {{blog.backToHome}}</a></p>
+  </div>
+</section>
+
+{{siteFooter}}
+
+</body>
+</html>

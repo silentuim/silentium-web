@@ -1,0 +1,101 @@
+{{generatedHeader}}<html lang="{{lang}}">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{postMetaTitle}}</title>
+<meta name="description" content="{{postDesc}}">
+<link rel="canonical" href="{{url}}">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="theme-color" content="#050a14">
+<link rel="icon" href="/favicon.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<!-- El slug del articulo es el mismo en los cuatro idiomas, asi que estos
+     hreflang solo cambian el prefijo de idioma: /blog/x/, /en/blog/x/... Cada
+     version se apunta a si misma y a las otras tres, igual que la home. -->
+{{hreflang}}
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Silentium Supernova">
+<meta property="og:locale" content="{{ogLocale}}">
+{{ogLocaleAlt}}
+<meta property="og:url" content="{{url}}">
+<meta property="og:title" content="{{postTitle}}">
+<meta property="og:description" content="{{postDesc}}">
+<meta property="og:image" content="https://silentiumsupernova.com/og-image.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="{{meta.ogImageAlt}}">
+<meta property="article:published_time" content="{{postDateIso}}">
+<meta property="article:section" content="{{postTag}}">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{postTitle}}">
+<meta name="twitter:description" content="{{postDesc}}">
+<meta name="twitter:image" content="https://silentiumsupernova.com/og-image.jpg">
+<meta name="twitter:image:alt" content="{{meta.ogImageAlt}}">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://silentiumsupernova.com/#organizacion",
+      "name": "Silentium Supernova",
+      "url": "https://silentiumsupernova.com/",
+      "logo": "https://silentiumsupernova.com/assets/logo.jpg",
+      "description": "{{meta.orgDescription}}"
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "{{url}}#articulo",
+      "mainEntityOfPage": "{{url}}",
+      "url": "{{url}}",
+      "headline": "{{postTitle}}",
+      "description": "{{postDesc}}",
+      "articleSection": "{{postTag}}",
+      "inLanguage": "{{lang}}",
+      "datePublished": "{{postDateIso}}",
+      "dateModified": "{{postDateIso}}",
+      "image": "https://silentiumsupernova.com/og-image.jpg",
+      "isPartOf": { "@id": "{{blogUrl}}#blog" },
+      "author": { "@id": "https://silentiumsupernova.com/#organizacion" },
+      "publisher": { "@id": "https://silentiumsupernova.com/#organizacion" }
+    }
+  ]
+}
+</script>
+{{styles}}
+</head>
+<body>
+
+{{siteTop}}
+
+<article class="post">
+  <div class="post-wrap">
+
+    <header class="post-head">
+      <span class="tag">{{postTag}}</span>
+      <h1>{{postTitle}}</h1>
+      <p class="post-lead">{{postDesc}}</p>
+      <p class="post-meta"><time datetime="{{postDateIso}}">{{postDate}}</time></p>
+    </header>
+
+    <div class="post-body">
+{{postBody}}
+    </div>
+
+    <nav class="post-nav">
+      <a href="{{blogIndex}}">&larr; {{blog.backToIndex}}</a>
+      <a href="{{home}}">{{blog.backToHome}}</a>
+    </nav>
+
+  </div>
+</article>
+
+{{siteFooter}}
+
+</body>
+</html>

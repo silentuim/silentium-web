@@ -1,0 +1,210 @@
+{
+  "_comment": "Cuerpo de los articulos del blog. Los titulos, tags y extractos NO estan aqui: viven en i18n.json bajo 'blog.postN.*' porque las tarjetas de la home ya los usan, y un texto con dos fuentes acaba desincronizado. Aqui solo lo que es propio del articulo: 'slug' (uno solo, en ingles, igual en los cuatro idiomas, para que la URL no cambie al cambiar de lengua), 'date' (ISO, se formatea por idioma en build.py) y 'body'. El 'id' enlaza con las claves de i18n.json. FORMATO DEL BODY: una lista de bloques de texto plano, sin HTML. Un bloque que empieza por '## ' es un <h2>; uno cuyas lineas empiezan por '- ' es un <ul>; el resto son <p>. El texto se escapa siempre, asi que no se puede meter marcado a mano: build.py envuelve solo los nombres de marca en <span translate=\"no\"> por su cuenta, con los espacios dentro del span, que es lo que evita que el traductor del navegador se los coma.",
+  "posts": [
+    {
+      "id": "post1",
+      "slug": "why-free-costs-something",
+      "date": "2026-09-09",
+      "body": {
+        "es": [
+          "Ninguna app se mantiene sola. Alguien paga los servidores, el tiempo de desarrollo y la ficha de la tienda desde la que se descarga. Cuando el precio dice 0 €, esa cuenta no desaparece: se paga por otra vía, y esa vía casi siempre eres tú.",
+          "## El producto no es la app",
+          "El modelo publicitario que sostiene la mayor parte del software gratuito no vende software: vende atención y previsión. Un anunciante no paga por enseñarte un anuncio, paga por enseñárselo a alguien con una probabilidad alta de comprar. Esa probabilidad se calcula, y para calcularla hace falta materia prima: qué abres, cuándo, desde dónde, cuánto rato y después de qué.",
+          "Por eso el negocio no premia recoger lo justo, premia recoger de más. Un dato que hoy no sirve puede cruzarse mañana con otro y valer. Almacenar sale barato; borrar no le aporta nada a nadie.",
+          "## Lo que se recoge no siempre se ve",
+          "- Identificadores de publicidad que siguen siendo el mismo tú entre apps de empresas distintas.\n- SDK de terceros incrustados en la app, que envían datos a compañías cuyo nombre no aparece por ninguna parte.\n- Telemetría de uso: qué pantallas abres, cuánto tiempo pasas en cada una, con qué frecuencia vuelves.\n- Metadatos de red y ubicación aproximada, que no necesitan GPS para situarte en un barrio.",
+          "Nada de esto es ilegal ni está del todo oculto: vive en una política de privacidad de once mil palabras que nadie lee. Y ese es justamente el punto.",
+          "## La otra manera de hacerlo",
+          "Silentium Supernova cobra por sus apps. Es una frase incómoda de escribir en una página de ventas, pero es la que sostiene todo lo demás: si paga quien usa la app, no hace falta que pague nadie más; y si no paga nadie más, no hay ningún motivo para recoger nada.",
+          "En la práctica significa cuatro cosas concretas:",
+          "- Sin cuentas. No hay registro, así que no existe una base de datos de usuarios que se pueda filtrar.\n- Sin analíticas ni telemetría. No sabemos qué pantallas abres, y no es una promesa: es que no existe el código que lo enviaría.\n- Sin nube. Tus notas, tus sesiones y tus ajustes viven en el dispositivo. Si desinstalas, se van contigo.\n- Sin anuncios ni SDK de terceros dentro de la app.",
+          "## Cómo comprobarlo sin fiarte de nosotros",
+          "No hace falta creer a nadie de palabra. Un cortafuegos local, o el propio modo avión, dicen bastante: una app local-first sigue funcionando entera sin red. Si algo deja de funcionar sin conexión y no tenía ninguna razón para necesitarla, ya sabes que estaba hablando con alguien.",
+          "Gratis no es malo por definición. El software libre, los proyectos financiados con donaciones y las herramientas mantenidas por su comunidad son gratis y limpios. La pregunta útil no es cuánto cuesta, es quién lo paga. Cuando esa respuesta no aparece por ningún lado, suele ser porque la respuesta eres tú."
+        ],
+        "en": [
+          "No app maintains itself. Someone pays for the servers, the development time and the store listing it is downloaded from. When the price tag reads $0, that bill does not disappear: it gets paid another way, and that way is almost always you.",
+          "## The product is not the app",
+          "The advertising model behind most free software does not sell software. It sells attention and prediction. An advertiser is not paying to show you an ad; they are paying to show it to someone with a high probability of buying. That probability has to be calculated, and calculating it takes raw material: what you open, when, from where, for how long, and right after what.",
+          "So the business does not reward collecting only what is needed. It rewards collecting extra. A data point that is useless today can be joined to another one tomorrow and become worth something. Storing is cheap; deleting earns nobody anything.",
+          "## What gets collected is not always visible",
+          "- Advertising identifiers that keep being the same you across apps from unrelated companies.\n- Third-party SDKs embedded in the app, shipping data to firms whose name appears nowhere on the listing.\n- Usage telemetry: which screens you open, how long you stay on each one, how often you come back.\n- Network metadata and coarse location, which do not need GPS to place you in a neighbourhood.",
+          "None of this is illegal, and none of it is entirely hidden: it lives in an eleven-thousand-word privacy policy that nobody reads. That is precisely the point.",
+          "## The other way to do it",
+          "Silentium Supernova charges for its apps. That is an awkward sentence to write on a sales page, but it is the one holding everything else up: if the person using the app pays, nobody else has to; and if nobody else pays, there is no reason to collect anything.",
+          "In practice that means four concrete things:",
+          "- No accounts. There is no sign-up, so there is no user database that could ever leak.\n- No analytics, no telemetry. We do not know which screens you open, and that is not a promise: the code that would send it does not exist.\n- No cloud. Your notes, your sessions and your settings live on the device. Uninstall, and they leave with you.\n- No ads and no third-party SDKs inside the app.",
+          "## How to check without trusting us",
+          "You do not have to take anyone's word for it. A local firewall, or plain airplane mode, tells you plenty: a local-first app keeps working in full with no network. If something stops working offline and had no business needing a connection, you now know it was talking to someone.",
+          "Free is not wrong by definition. Free software, donation-funded projects and community-maintained tools are free and clean. The useful question is never how much it costs, it is who pays for it. When that answer appears nowhere on the page, it is usually because the answer is you."
+        ],
+        "fr": [
+          "Aucune application ne se maintient toute seule. Quelqu'un paie les serveurs, le temps de développement et la fiche du magasin d'où elle est téléchargée. Quand le prix affiche 0 €, cette facture ne disparaît pas : elle est réglée autrement, et cette autre voie, c'est presque toujours vous.",
+          "## Le produit, ce n'est pas l'application",
+          "Le modèle publicitaire qui finance la majeure partie des logiciels gratuits ne vend pas du logiciel. Il vend de l'attention et de la prédiction. Un annonceur ne paie pas pour vous montrer une publicité, il paie pour la montrer à quelqu'un qui a de fortes chances d'acheter. Cette probabilité se calcule, et pour la calculer il faut de la matière première : ce que vous ouvrez, quand, depuis où, combien de temps, et juste après quoi.",
+          "Le modèle économique ne récompense donc pas la collecte du strict nécessaire, il récompense la collecte en trop. Une donnée inutile aujourd'hui pourra être croisée demain avec une autre et prendre de la valeur. Stocker ne coûte presque rien ; effacer ne rapporte à personne.",
+          "## Ce qui est collecté ne se voit pas toujours",
+          "- Des identifiants publicitaires qui restent le même vous d'une application à l'autre, entre entreprises sans lien.\n- Des SDK tiers intégrés à l'application, qui envoient des données à des sociétés dont le nom n'apparaît nulle part.\n- De la télémétrie d'usage : quels écrans vous ouvrez, combien de temps vous y restez, à quelle fréquence vous revenez.\n- Des métadonnées réseau et une localisation approximative, qui n'ont pas besoin du GPS pour vous situer dans un quartier.",
+          "Rien de tout cela n'est illégal, ni totalement caché : cela vit dans une politique de confidentialité de onze mille mots que personne ne lit. Et c'est précisément le principe.",
+          "## L'autre façon de faire",
+          "Silentium Supernova fait payer ses applications. C'est une phrase inconfortable à écrire sur une page de vente, mais c'est elle qui tient tout le reste : si la personne qui utilise l'application paie, personne d'autre n'a besoin de payer ; et si personne d'autre ne paie, il n'y a aucune raison de collecter quoi que ce soit.",
+          "Concrètement, cela veut dire quatre choses :",
+          "- Pas de comptes. Aucune inscription, donc aucune base de données d'utilisateurs susceptible de fuiter.\n- Pas d'analytics, pas de télémétrie. Nous ne savons pas quels écrans vous ouvrez, et ce n'est pas une promesse : le code qui l'enverrait n'existe pas.\n- Pas de cloud. Vos notes, vos sessions et vos réglages vivent sur l'appareil. Si vous désinstallez, ils partent avec vous.\n- Pas de publicité ni de SDK tiers dans l'application.",
+          "## Comment le vérifier sans nous croire sur parole",
+          "Vous n'avez à croire personne. Un pare-feu local, ou simplement le mode avion, en dit long : une application local-first continue de fonctionner entièrement sans réseau. Si quelque chose cesse de marcher hors ligne alors que rien ne justifiait une connexion, vous savez désormais qu'elle parlait à quelqu'un.",
+          "Gratuit n'est pas mauvais par définition. Les logiciels libres, les projets financés par des dons et les outils maintenus par leur communauté sont gratuits et propres. La bonne question n'est pas combien cela coûte, c'est qui paie. Quand la réponse n'apparaît nulle part sur la page, c'est en général parce que la réponse, c'est vous."
+        ],
+        "de": [
+          "Keine App erhält sich von selbst. Irgendjemand bezahlt die Server, die Entwicklungszeit und den Store-Eintrag, aus dem sie heruntergeladen wird. Wenn im Preis 0 € steht, verschwindet diese Rechnung nicht: Sie wird auf anderem Weg beglichen, und dieser Weg sind fast immer Sie.",
+          "## Das Produkt ist nicht die App",
+          "Das Werbemodell, das den Großteil kostenloser Software trägt, verkauft keine Software. Es verkauft Aufmerksamkeit und Vorhersage. Ein Werbetreibender zahlt nicht dafür, Ihnen eine Anzeige zu zeigen, sondern dafür, sie jemandem zu zeigen, der mit hoher Wahrscheinlichkeit kauft. Diese Wahrscheinlichkeit wird berechnet, und für die Berechnung braucht es Rohstoff: was Sie öffnen, wann, von wo, wie lange und unmittelbar nach was.",
+          "Das Geschäft belohnt deshalb nicht, nur das Nötige zu sammeln. Es belohnt, zu viel zu sammeln. Ein Datenpunkt, der heute nutzlos ist, lässt sich morgen mit einem anderen verknüpfen und wird wertvoll. Speichern ist billig; Löschen bringt niemandem etwas.",
+          "## Was gesammelt wird, ist nicht immer sichtbar",
+          "- Werbe-IDs, die über Apps völlig unbeteiligter Firmen hinweg derselbe Sie bleiben.\n- Fremde SDKs in der App, die Daten an Unternehmen senden, deren Name nirgendwo auftaucht.\n- Nutzungstelemetrie: welche Bildschirme Sie öffnen, wie lange Sie dort bleiben, wie oft Sie zurückkommen.\n- Netzwerk-Metadaten und grobe Standortdaten, die kein GPS brauchen, um Sie einem Stadtviertel zuzuordnen.",
+          "Nichts davon ist illegal, und nichts davon ist völlig verborgen: Es steht in einer Datenschutzerklärung mit elftausend Wörtern, die niemand liest. Und genau darum geht es.",
+          "## Der andere Weg",
+          "Silentium Supernova verlangt Geld für seine Apps. Das ist ein unbequemer Satz auf einer Verkaufsseite, aber er trägt alles Übrige: Wenn die Person zahlt, die die App benutzt, muss niemand sonst zahlen; und wenn niemand sonst zahlt, gibt es keinen Grund, irgendetwas zu sammeln.",
+          "In der Praxis heißt das vier konkrete Dinge:",
+          "- Keine Konten. Es gibt keine Registrierung, also auch keine Nutzerdatenbank, die jemals abfließen könnte.\n- Keine Analytics, keine Telemetrie. Wir wissen nicht, welche Bildschirme Sie öffnen, und das ist kein Versprechen: Der Code, der es senden würde, existiert nicht.\n- Keine Cloud. Ihre Notizen, Ihre Sitzungen und Ihre Einstellungen liegen auf dem Gerät. Deinstallieren Sie, gehen sie mit Ihnen.\n- Keine Werbung und keine fremden SDKs in der App.",
+          "## Wie Sie es prüfen, ohne uns zu glauben",
+          "Sie müssen niemandem aufs Wort glauben. Eine lokale Firewall oder schlicht der Flugmodus sagen genug: Eine local-first-App funktioniert ohne Netz vollständig weiter. Wenn etwas offline nicht mehr läuft, das keinen Grund für eine Verbindung hatte, wissen Sie jetzt, dass es mit jemandem gesprochen hat.",
+          "Kostenlos ist nicht per se schlecht. Freie Software, spendenfinanzierte Projekte und von ihrer Community gepflegte Werkzeuge sind kostenlos und sauber. Die nützliche Frage ist nie, was es kostet, sondern wer dafür zahlt. Wenn diese Antwort nirgends auf der Seite steht, liegt es meist daran, dass die Antwort Sie sind."
+        ]
+      }
+    },
+    {
+      "id": "post2",
+      "slug": "android-permissions-worth-checking",
+      "date": "2026-09-02",
+      "body": {
+        "es": [
+          "Un permiso de Android es una pregunta con una respuesta que dura años. Se concede en dos segundos, casi siempre con prisa, y a partir de ahí la app puede usarlo cada vez que se abre sin volver a preguntar nada. Revisar la lista una vez al año lleva diez minutos y suele dar alguna sorpresa.",
+          "## Los cuatro permisos que más conviene mirar",
+          "No todos pesan igual. Estos son los que abren la puerta más ancha:",
+          "- Micrófono. Puede grabar mientras la app está en primer plano. Tiene sentido en una app de llamadas o de notas de voz; no lo tiene en una linterna, un juego o un teclado.\n- Ubicación. Distingue entre precisa y aproximada, y entre solo mientras se usa y siempre. Muy pocas apps necesitan la combinación precisa y siempre; el tiempo, por ejemplo, funciona igual de bien con la aproximada.\n- Almacenamiento y fotos. Android moderno permite dar acceso solo a las imágenes que tú eliges. Si una app pide la galería entera para cambiar un avatar, está pidiendo de más.\n- Accesibilidad. Es el más delicado de todos: permite leer lo que aparece en pantalla y actuar en tu nombre. Está pensado para lectores de pantalla y automatización. Si una app corriente lo pide, merece una explicación muy buena.",
+          "## Qué mirar antes de instalar",
+          "La ficha de la tienda dice más de lo que parece si se lee en este orden:",
+          "- Quién publica la app. Un nombre real, una web que existe y un rastro anterior. Un desarrollador con una sola app y sin historia no es sospechoso por sí solo, pero pide más lectura.\n- La sección de seguridad de los datos: qué se recoge, qué se comparte con terceros y si se puede pedir el borrado. Es autodeclarada, así que vale sobre todo cuando admite cosas incómodas.\n- Los permisos declarados frente a lo que la app promete hacer. La distancia entre las dos listas es la señal más útil de todas.\n- Las reseñas negativas recientes, no la nota media. Ahí aparecen los anuncios que se comen la pantalla y las funciones que dejaron de ser gratuitas.",
+          "## Después de instalar",
+          "En Ajustes, Privacidad, Gestor de permisos, Android agrupa las apps por permiso en lugar de por aplicación. Se lee mucho mejor: en vez de abrir cuarenta fichas, ves de golpe quién tiene el micrófono. Revoca sin miedo lo que no encaje; si algo hacía falta de verdad, la app volverá a pedirlo cuando toque.",
+          "Dos ajustes más que rinden mucho: elimina el permiso de las apps que no abres desde hace meses, y activa la revocación automática de permisos para apps sin usar. Y borrar una app que llevas medio año sin abrir es la medida de privacidad más eficaz que existe.",
+          "## Lo que no aparece en ninguna lista",
+          "El acceso a la red no se pide como permiso: se declara y ya está. Una app sin ningún permiso llamativo puede seguir enviando fuera lo que sabe de ti. Por eso la pregunta de fondo no es solo qué permisos pide, sino qué necesita para funcionar.",
+          "Las apps de Silentium Supernova piden el mínimo que exige su función y trabajan en el dispositivo: sin cuentas, sin analíticas y sin nube. La prueba está al alcance de cualquiera: ponlas en modo avión y comprueba que siguen haciendo lo mismo."
+        ],
+        "en": [
+          "An Android permission is a question whose answer lasts for years. You grant it in two seconds, usually in a hurry, and from then on the app can use it every time it opens without ever asking again. Reviewing the list once a year takes ten minutes and usually turns up a surprise.",
+          "## The four permissions most worth checking",
+          "They are not all equally heavy. These open the widest door:",
+          "- Microphone. It can record while the app is in the foreground. That makes sense in a calling or voice-notes app; it makes none in a flashlight, a game or a keyboard.\n- Location. Android separates precise from approximate, and while in use from always. Very few apps need precise and always together; a weather app works just as well on approximate.\n- Storage and photos. Modern Android lets you grant access only to the images you pick. If an app wants your whole gallery to change one avatar, it is asking for more than it needs.\n- Accessibility. The most sensitive of them all: it can read what is on screen and act on your behalf. It exists for screen readers and automation. If an ordinary app requests it, that deserves a very good explanation.",
+          "## What to look at before installing",
+          "The store listing says more than it seems if you read it in this order:",
+          "- Who publishes the app. A real name, a website that exists, a track record. A developer with a single app and no history is not suspicious on its own, but it asks for more reading.\n- The data safety section: what is collected, what is shared with third parties, whether deletion can be requested. It is self-declared, so it counts most when it admits something inconvenient.\n- The declared permissions against what the app claims to do. The gap between those two lists is the single most useful signal there is.\n- Recent negative reviews, not the average score. That is where the screen-filling ads and the features that stopped being free show up.",
+          "## After installing",
+          "Under Settings, Privacy, Permission manager, Android groups apps by permission rather than by app. It reads far better that way: instead of opening forty listings, you see at a glance who holds the microphone. Revoke anything that does not fit; if something was genuinely needed, the app will ask again when the moment comes.",
+          "Two more settings that pay off: strip permissions from apps you have not opened in months, and turn on automatic permission removal for unused apps. And deleting an app you have not opened in half a year is the most effective privacy measure that exists.",
+          "## What appears on no list at all",
+          "Network access is not requested as a permission: it is simply declared. An app with no eye-catching permissions can still send out whatever it knows about you. So the underlying question is not only which permissions it asks for, but what it needs in order to work.",
+          "Silentium Supernova apps request the minimum their function requires and do their work on the device: no accounts, no analytics, no cloud. The proof is available to anyone: put them in airplane mode and check that they still do the same thing."
+        ],
+        "fr": [
+          "Une autorisation Android est une question dont la réponse dure des années. On l'accorde en deux secondes, le plus souvent dans la précipitation, et l'application peut ensuite s'en servir à chaque ouverture sans jamais redemander. Passer la liste en revue une fois par an prend dix minutes et réserve en général une surprise.",
+          "## Les quatre autorisations à regarder en priorité",
+          "Elles ne pèsent pas toutes le même poids. Voici celles qui ouvrent la porte la plus large :",
+          "- Le micro. Il peut enregistrer tant que l'application est au premier plan. Cela se justifie dans une application d'appels ou de notes vocales ; pas dans une lampe torche, un jeu ou un clavier.\n- La localisation. Android distingue précise et approximative, et pendant l'utilisation ou toujours. Très peu d'applications ont besoin de précise et toujours ; une application météo fonctionne aussi bien en approximative.\n- Le stockage et les photos. Android récent permet de n'accorder l'accès qu'aux images que vous choisissez. Si une application réclame toute la galerie pour changer un avatar, elle demande trop.\n- L'accessibilité. La plus sensible de toutes : elle permet de lire ce qui s'affiche à l'écran et d'agir en votre nom. Elle existe pour les lecteurs d'écran et l'automatisation. Si une application ordinaire la demande, cela mérite une très bonne explication.",
+          "## Ce qu'il faut regarder avant d'installer",
+          "La fiche du magasin en dit plus qu'il n'y paraît si on la lit dans cet ordre :",
+          "- Qui publie l'application. Un vrai nom, un site qui existe, un historique. Un développeur avec une seule application et aucun passé n'est pas suspect en soi, mais il demande plus de lecture.\n- La section sécurité des données : ce qui est collecté, ce qui est partagé avec des tiers, si la suppression peut être demandée. Elle est auto-déclarée, elle vaut donc surtout quand elle admet des choses gênantes.\n- Les autorisations déclarées face à ce que l'application prétend faire. L'écart entre ces deux listes est le signal le plus utile qui soit.\n- Les avis négatifs récents, pas la note moyenne. C'est là qu'apparaissent les publicités qui mangent l'écran et les fonctions devenues payantes.",
+          "## Après l'installation",
+          "Dans Paramètres, Confidentialité, Gestionnaire d'autorisations, Android regroupe les applications par autorisation plutôt que par application. La lecture est bien meilleure : au lieu d'ouvrir quarante fiches, vous voyez d'un coup qui détient le micro. Révoquez sans crainte ce qui ne colle pas ; si quelque chose était vraiment nécessaire, l'application redemandera le moment venu.",
+          "Deux réglages qui rapportent gros : retirez les autorisations des applications que vous n'ouvrez plus depuis des mois, et activez la suppression automatique des autorisations pour les applications inutilisées. Et supprimer une application que vous n'avez pas ouverte depuis six mois reste la mesure de confidentialité la plus efficace qui existe.",
+          "## Ce qui ne figure sur aucune liste",
+          "L'accès au réseau ne se demande pas comme une autorisation : il se déclare, c'est tout. Une application sans aucune autorisation voyante peut très bien envoyer au dehors ce qu'elle sait de vous. La question de fond n'est donc pas seulement quelles autorisations elle demande, mais ce dont elle a besoin pour fonctionner.",
+          "Les applications Silentium Supernova demandent le minimum qu'exige leur fonction et travaillent sur l'appareil : sans comptes, sans analytics et sans cloud. La preuve est à la portée de tous : mettez-les en mode avion et vérifiez qu'elles font toujours la même chose."
+        ],
+        "de": [
+          "Eine Android-Berechtigung ist eine Frage, deren Antwort jahrelang gilt. Man erteilt sie in zwei Sekunden, meist in Eile, und die App darf sie danach bei jedem Start nutzen, ohne je wieder zu fragen. Die Liste einmal im Jahr durchzugehen dauert zehn Minuten und fördert in der Regel eine Überraschung zutage.",
+          "## Die vier Berechtigungen, die sich zu prüfen lohnen",
+          "Sie wiegen nicht alle gleich schwer. Diese öffnen die breiteste Tür:",
+          "- Mikrofon. Es kann aufnehmen, solange die App im Vordergrund ist. In einer Telefonie- oder Sprachnotiz-App ergibt das Sinn; in einer Taschenlampe, einem Spiel oder einer Tastatur nicht.\n- Standort. Android unterscheidet genau von ungefähr und nur während der Nutzung von immer. Sehr wenige Apps brauchen genau und immer zugleich; eine Wetter-App funktioniert mit ungefähr genauso gut.\n- Speicher und Fotos. Aktuelles Android erlaubt, den Zugriff nur auf ausgewählte Bilder zu geben. Wer die ganze Galerie verlangt, um ein Profilbild zu ändern, fragt nach mehr als er braucht.\n- Bedienungshilfen. Die heikelste von allen: Sie kann lesen, was auf dem Bildschirm steht, und in Ihrem Namen handeln. Gedacht ist sie für Screenreader und Automatisierung. Fragt eine gewöhnliche App danach, verlangt das eine sehr gute Erklärung.",
+          "## Worauf Sie vor der Installation achten",
+          "Der Store-Eintrag sagt mehr, als es scheint, wenn man ihn in dieser Reihenfolge liest:",
+          "- Wer die App veröffentlicht. Ein echter Name, eine Website, die es gibt, eine Vorgeschichte. Ein Entwickler mit einer einzigen App und ohne Historie ist für sich genommen nicht verdächtig, verlangt aber mehr Lesen.\n- Der Abschnitt zur Datensicherheit: was erhoben wird, was an Dritte geht, ob Löschung verlangt werden kann. Er ist selbst deklariert und zählt deshalb vor allem dann, wenn er Unbequemes zugibt.\n- Die deklarierten Berechtigungen gegen das, was die App zu tun verspricht. Der Abstand zwischen diesen beiden Listen ist das nützlichste Signal überhaupt.\n- Die jüngsten negativen Bewertungen, nicht die Durchschnittsnote. Dort tauchen die bildschirmfüllende Werbung und die Funktionen auf, die aufgehört haben, kostenlos zu sein.",
+          "## Nach der Installation",
+          "Unter Einstellungen, Datenschutz, Berechtigungsmanager gruppiert Android die Apps nach Berechtigung statt nach App. Das liest sich deutlich besser: Statt vierzig Einträge zu öffnen, sehen Sie auf einen Blick, wer das Mikrofon hat. Entziehen Sie bedenkenlos, was nicht passt; war etwas wirklich nötig, fragt die App zum gegebenen Zeitpunkt erneut.",
+          "Zwei weitere Einstellungen, die viel bringen: Entziehen Sie Apps die Rechte, die Sie seit Monaten nicht geöffnet haben, und aktivieren Sie das automatische Entfernen von Berechtigungen ungenutzter Apps. Und eine App zu löschen, die Sie ein halbes Jahr nicht geöffnet haben, ist die wirksamste Datenschutzmaßnahme, die es gibt.",
+          "## Was auf keiner Liste steht",
+          "Netzwerkzugriff wird nicht als Berechtigung erfragt: Er wird schlicht deklariert. Eine App ohne jede auffällige Berechtigung kann trotzdem nach außen senden, was sie über Sie weiß. Die eigentliche Frage lautet deshalb nicht nur, welche Rechte sie verlangt, sondern was sie zum Arbeiten überhaupt braucht.",
+          "Die Apps von Silentium Supernova verlangen das Minimum, das ihre Funktion erfordert, und arbeiten auf dem Gerät: ohne Konten, ohne Analytics, ohne Cloud. Den Beweis kann jeder führen: Schalten Sie den Flugmodus ein und prüfen Sie, ob sie weiterhin dasselbe tun."
+        ]
+      }
+    },
+    {
+      "id": "post3",
+      "slug": "dark-patterns-how-to-spot-them",
+      "date": "2026-08-26",
+      "body": {
+        "es": [
+          "Un dark pattern no es un fallo de diseño. Es una interfaz que funciona exactamente como se pensó, solo que a favor de quien la construyó y en contra de quien la usa. Se reconocen por una sensación concreta: acabas de hacer algo que no querías hacer y no sabrías señalar en qué momento decidiste hacerlo.",
+          "## Los que más se repiten",
+          "- Camino desigual. Aceptar es un botón grande y de color; rechazar es un enlace gris, en otra pantalla, detrás de la palabra Opciones. Las dos decisiones valen lo mismo pero cuestan esfuerzos muy distintos.\n- Culpa en el botón. La opción de rechazar está redactada para avergonzar: no, prefiero seguir desprotegido. Un formulario no debería opinar sobre ti.\n- Urgencia inventada. Contadores que se reinician al recargar, quedan 2 unidades que llevan meses quedando, avisos de otras diecinueve personas mirando esto ahora.\n- Continuidad forzada. Suscribirse cuesta dos toques; cancelar, encontrar un formulario, esperar un correo y a veces escribir a soporte.\n- Costes que aparecen tarde. El precio de la primera pantalla no es el precio final, y los añadidos aparecen cuando ya has invertido diez minutos en el proceso.\n- Preguntar hasta ganar. La misma petición de permiso, notificaciones o valoración vuelve una y otra vez hasta que aceptas por cansancio.",
+          "## Por qué siguen ahí",
+          "Porque se miden y funcionan. Un test A/B mide conversiones esta semana, no la confianza dentro de dos años. Si la casilla premarcada sube las altas un 12 %, el panel de métricas dice que es una mejora, y nadie tiene en el mismo panel la columna de los que se sintieron engañados y no volvieron.",
+          "## Cómo reconocerlos en el momento",
+          "Tres preguntas rápidas bastan casi siempre:",
+          "- ¿Cuesta lo mismo decir que sí que decir que no? Si no, ahí hay una intención.\n- ¿La urgencia sobrevive a recargar la página? Si el contador se reinicia, era decorado.\n- ¿Sé cómo salir antes de entrar? Busca el proceso de cancelación antes de darte de alta, no después.",
+          "Y una defensa práctica: cuando una pantalla te meta prisa, haz justo lo contrario y ciérrala. Si la oferta era real, seguirá ahí mañana. Si no seguía ahí, no era una oferta.",
+          "## El compromiso de Silentium",
+          "Aquí esto se traduce en reglas de diseño, no en un párrafo de intenciones:",
+          "- Nada premarcado. Lo que no has activado tú, está apagado.\n- Sin contadores de urgencia ni escasez fabricada.\n- Precio completo desde el principio, y la cancelación por el mismo camino por el que se contrató.\n- Cada permiso se pide una vez, con el motivo delante, y un no es un no definitivo.\n- Sin muros de cookies, porque no hay analíticas que consentir.",
+          "El buen diseño se nota en que puedes cambiar de opinión sin pelear. Todo lo que dificulte marcharse, cancelar o decir que no está diciendo algo sobre el negocio que hay detrás, y suele ser lo más honesto de toda la interfaz."
+        ],
+        "en": [
+          "A dark pattern is not a design mistake. It is an interface working exactly as intended, only in favour of whoever built it and against whoever uses it. You recognise one by a specific feeling: you have just done something you did not want to do, and you could not point to the moment you decided to do it.",
+          "## The ones you meet most often",
+          "- The uneven path. Accept is a large coloured button; decline is a grey link, on another screen, behind the word Options. Both decisions carry the same weight but cost wildly different effort.\n- Guilt in the button. The decline option is worded to shame you: no thanks, I prefer to stay unprotected. A form should not have opinions about you.\n- Manufactured urgency. Countdowns that reset on reload, only 2 left that have been left for months, notices that nineteen other people are looking at this right now.\n- Forced continuity. Subscribing takes two taps; cancelling takes finding a form, waiting for an email and sometimes writing to support.\n- Costs that surface late. The price on the first screen is not the final price, and the extras appear once you have already sunk ten minutes into the flow.\n- Asking until it wins. The same permission, notification or rating prompt returns again and again until you accept out of fatigue.",
+          "## Why they are still here",
+          "Because they are measured and they work. An A/B test measures conversions this week, not trust two years from now. If the pre-ticked box lifts sign-ups by 12%, the dashboard calls it an improvement, and nobody has a column on that same dashboard for the people who felt tricked and never came back.",
+          "## How to spot one in the moment",
+          "Three quick questions cover almost everything:",
+          "- Does saying no cost the same as saying yes? If not, there is an intention behind it.\n- Does the urgency survive a page reload? If the countdown resets, it was scenery.\n- Do I know how to leave before I go in? Find the cancellation flow before signing up, not after.",
+          "And one practical defence: when a screen rushes you, do the opposite and close it. If the offer was real, it will still be there tomorrow. If it was not there tomorrow, it was not an offer.",
+          "## What Silentium commits to",
+          "Here that turns into design rules, not a paragraph of good intentions:",
+          "- Nothing pre-ticked. Whatever you did not switch on is off.\n- No urgency counters, no manufactured scarcity.\n- The full price from the start, and cancellation by the same route as the sign-up.\n- Each permission is asked once, with the reason in front of it, and a no is a final no.\n- No cookie walls, because there are no analytics to consent to.",
+          "Good design shows in whether you can change your mind without a fight. Anything that makes leaving, cancelling or saying no harder is telling you something about the business behind it, and it is usually the most honest part of the whole interface."
+        ],
+        "fr": [
+          "Un dark pattern n'est pas une erreur de conception. C'est une interface qui fonctionne exactement comme prévu, mais en faveur de celui qui l'a construite et contre celui qui l'utilise. On les reconnaît à une sensation précise : vous venez de faire quelque chose que vous ne vouliez pas faire, et vous seriez incapable de dire à quel moment vous l'avez décidé.",
+          "## Ceux que l'on croise le plus souvent",
+          "- Le chemin inégal. Accepter est un gros bouton coloré ; refuser est un lien gris, sur un autre écran, derrière le mot Options. Les deux décisions se valent, mais elles coûtent des efforts très différents.\n- La culpabilité dans le bouton. L'option de refus est rédigée pour faire honte : non merci, je préfère rester sans protection. Un formulaire n'a pas à avoir un avis sur vous.\n- L'urgence fabriquée. Des comptes à rebours qui repartent à zéro au rechargement, plus que 2 en stock depuis des mois, des avis annonçant que dix-neuf autres personnes regardent ceci en ce moment.\n- La continuité forcée. S'abonner prend deux touches ; résilier suppose de trouver un formulaire, d'attendre un e-mail et parfois d'écrire au support.\n- Les coûts qui arrivent tard. Le prix du premier écran n'est pas le prix final, et les suppléments apparaissent une fois que vous avez déjà investi dix minutes dans le parcours.\n- Demander jusqu'à gagner. La même demande d'autorisation, de notification ou de note revient encore et encore jusqu'à ce que vous acceptiez par lassitude.",
+          "## Pourquoi ils sont toujours là",
+          "Parce qu'ils se mesurent et qu'ils marchent. Un test A/B mesure les conversions de cette semaine, pas la confiance dans deux ans. Si la case précochée fait grimper les inscriptions de 12 %, le tableau de bord parle d'amélioration, et personne n'y trouve la colonne des gens qui se sont sentis piégés et ne sont jamais revenus.",
+          "## Comment les repérer sur le moment",
+          "Trois questions rapides suffisent presque toujours :",
+          "- Dire non coûte-t-il autant que dire oui ? Si non, il y a une intention derrière.\n- L'urgence survit-elle à un rechargement de la page ? Si le compteur repart à zéro, c'était du décor.\n- Est-ce que je sais comment sortir avant d'entrer ? Cherchez la procédure de résiliation avant de vous inscrire, pas après.",
+          "Et une défense pratique : quand un écran vous presse, faites l'inverse et fermez-le. Si l'offre était réelle, elle sera encore là demain. Si elle n'y était plus, ce n'était pas une offre.",
+          "## L'engagement de Silentium",
+          "Ici, cela se traduit en règles de conception, pas en paragraphe de bonnes intentions :",
+          "- Rien de précoché. Ce que vous n'avez pas activé vous-même reste désactivé.\n- Pas de compte à rebours ni de rareté fabriquée.\n- Le prix complet dès le départ, et une résiliation par le même chemin que la souscription.\n- Chaque autorisation est demandée une fois, avec sa raison devant, et un non est un non définitif.\n- Pas de mur de cookies, parce qu'il n'y a aucun analytics à consentir.",
+          "Un bon design se reconnaît à ceci : pouvez-vous changer d'avis sans vous battre ? Tout ce qui rend plus difficile de partir, de résilier ou de dire non vous apprend quelque chose sur le modèle économique qui se cache derrière, et c'est souvent la partie la plus honnête de toute l'interface."
+        ],
+        "de": [
+          "Ein Dark Pattern ist kein Designfehler. Es ist eine Oberfläche, die genau so funktioniert, wie sie gedacht war, nur zugunsten dessen, der sie gebaut hat, und gegen den, der sie benutzt. Man erkennt sie an einem bestimmten Gefühl: Sie haben gerade etwas getan, das Sie nicht tun wollten, und könnten nicht sagen, in welchem Moment Sie sich dafür entschieden haben.",
+          "## Die häufigsten Muster",
+          "- Der ungleiche Weg. Annehmen ist eine große farbige Schaltfläche; Ablehnen ein grauer Link, auf einem anderen Bildschirm, hinter dem Wort Optionen. Beide Entscheidungen wiegen gleich viel, kosten aber völlig unterschiedlichen Aufwand.\n- Schuldgefühl in der Schaltfläche. Die Ablehnung ist so formuliert, dass sie beschämt: nein danke, ich bleibe lieber ungeschützt. Ein Formular sollte keine Meinung über Sie haben.\n- Erfundene Dringlichkeit. Countdowns, die beim Neuladen von vorn beginnen, nur noch 2 verfügbar seit Monaten, Hinweise, dass gerade neunzehn andere dies ansehen.\n- Erzwungene Fortsetzung. Abonnieren kostet zwei Fingertipps; Kündigen bedeutet, ein Formular zu finden, auf eine E-Mail zu warten und manchmal den Support anzuschreiben.\n- Kosten, die spät auftauchen. Der Preis auf dem ersten Bildschirm ist nicht der Endpreis, und die Zusätze erscheinen, wenn Sie schon zehn Minuten in den Ablauf gesteckt haben.\n- Fragen, bis es gewinnt. Dieselbe Anfrage nach Berechtigung, Benachrichtigung oder Bewertung kommt wieder und wieder, bis Sie aus Erschöpfung zustimmen.",
+          "## Warum es sie immer noch gibt",
+          "Weil sie gemessen werden und weil sie wirken. Ein A/B-Test misst die Conversions dieser Woche, nicht das Vertrauen in zwei Jahren. Hebt das vorangekreuzte Kästchen die Anmeldungen um 12 %, nennt das Dashboard es eine Verbesserung, und niemand hat auf demselben Dashboard eine Spalte für die Leute, die sich getäuscht fühlten und nie wiederkamen.",
+          "## Wie Sie eines im Moment erkennen",
+          "Drei schnelle Fragen decken fast alles ab:",
+          "- Kostet Nein sagen dasselbe wie Ja sagen? Wenn nicht, steckt eine Absicht dahinter.\n- Überlebt die Dringlichkeit ein Neuladen der Seite? Springt der Zähler zurück, war er Kulisse.\n- Weiß ich, wie ich wieder hinauskomme, bevor ich hineingehe? Suchen Sie den Kündigungsweg vor der Anmeldung, nicht danach.",
+          "Dazu eine praktische Verteidigung: Wenn ein Bildschirm Sie hetzt, tun Sie das Gegenteil und schließen Sie ihn. War das Angebot echt, ist es morgen noch da. War es morgen nicht mehr da, war es kein Angebot.",
+          "## Wozu sich Silentium verpflichtet",
+          "Daraus werden hier Designregeln, kein Absatz guter Absichten:",
+          "- Nichts ist vorangekreuzt. Was Sie nicht selbst eingeschaltet haben, ist aus.\n- Keine Dringlichkeitszähler, keine erfundene Knappheit.\n- Der volle Preis von Anfang an, und die Kündigung auf demselben Weg wie der Abschluss.\n- Jede Berechtigung wird einmal erfragt, mit dem Grund davor, und ein Nein ist ein endgültiges Nein.\n- Keine Cookie-Banner, weil es kein Analytics gibt, dem zuzustimmen wäre.",
+          "Gutes Design zeigt sich daran, ob Sie Ihre Meinung ändern können, ohne zu kämpfen. Alles, was das Gehen, das Kündigen oder das Neinsagen erschwert, sagt etwas über das Geschäft dahinter aus, und das ist meist der ehrlichste Teil der ganzen Oberfläche."
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<!--
+  ARCHIVO GENERADO - NO EDITAR A MANO.
+  Se genera desde _build/template.html + _build/i18n.json con:
+
+      python3 _build/build.py
+
+  Cualquier cambio escrito directamente aqui se perdera en la proxima
+  generacion, y ademas dejaria este idioma desincronizado de los otros tres.
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dark patterns: spotting them so you don't fall for them — Silentium Supernova</title>
+<meta name="description" content="Common manipulative design patterns, and how Silentium avoids them.">
+<link rel="canonical" href="https://silentiumsupernova.com/en/blog/dark-patterns-how-to-spot-them/">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="theme-color" content="#050a14">
+<link rel="icon" href="/favicon.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<!-- El slug del articulo es el mismo en los cuatro idiomas, asi que estos
+     hreflang solo cambian el prefijo de idioma: /blog/x/, /en/blog/x/... Cada
+     version se apunta a si misma y a las otras tres, igual que la home. -->
+<link rel="alternate" hreflang="es" href="https://silentiumsupernova.com/blog/dark-patterns-how-to-spot-them/">
+<link rel="alternate" hreflang="en" href="https://silentiumsupernova.com/en/blog/dark-patterns-how-to-spot-them/">
+<link rel="alternate" hreflang="fr" href="https://silentiumsupernova.com/fr/blog/dark-patterns-how-to-spot-them/">
+<link rel="alternate" hreflang="de" href="https://silentiumsupernova.com/de/blog/dark-patterns-how-to-spot-them/">
+<link rel="alternate" hreflang="x-default" href="https://silentiumsupernova.com/blog/dark-patterns-how-to-spot-them/">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Silentium Supernova">
+<meta property="og:locale" content="en_GB">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:url" content="https://silentiumsupernova.com/en/blog/dark-patterns-how-to-spot-them/">
+<meta property="og:title" content="Dark patterns: spotting them so you don't fall for them">
+<meta property="og:description" content="Common manipulative design patterns, and how Silentium avoids them.">
+<meta property="og:image" content="https://silentiumsupernova.com/og-image.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Silentium Supernova — Software that doesn't watch you. Five private Android apps, no analytics, no ads.">
+<meta property="article:published_time" content="2026-08-26">
+<meta property="article:section" content="Ethical design">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Dark patterns: spotting them so you don't fall for them">
+<meta name="twitter:description" content="Common manipulative design patterns, and how Silentium avoids them.">
+<meta name="twitter:image" content="https://silentiumsupernova.com/og-image.jpg">
+<meta name="twitter:image:alt" content="Silentium Supernova — Software that doesn't watch you. Five private Android apps, no analytics, no ads.">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://silentiumsupernova.com/#organizacion",
+      "name": "Silentium Supernova",
+      "url": "https://silentiumsupernova.com/",
+      "logo": "https://silentiumsupernova.com/assets/logo.jpg",
+      "description": "Local-first Android app development: no analytics, no telemetry and no cloud accounts."
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "https://silentiumsupernova.com/en/blog/dark-patterns-how-to-spot-them/#articulo",
+      "mainEntityOfPage": "https://silentiumsupernova.com/en/blog/dark-patterns-how-to-spot-them/",
+      "url": "https://silentiumsupernova.com/en/blog/dark-patterns-how-to-spot-them/",
+      "headline": "Dark patterns: spotting them so you don't fall for them",
+      "description": "Common manipulative design patterns, and how Silentium avoids them.",
+      "articleSection": "Ethical design",
+      "inLanguage": "en",
+      "datePublished": "2026-08-26",
+      "dateModified": "2026-08-26",
+      "image": "https://silentiumsupernova.com/og-image.jpg",
+      "isPartOf": { "@id": "https://silentiumsupernova.com/en/blog/#blog" },
+      "author": { "@id": "https://silentiumsupernova.com/#organizacion" },
+      "publisher": { "@id": "https://silentiumsupernova.com/#organizacion" }
+    }
+  ]
+}
+</script>
+<style>
+  :root{
+    --void:#050a14;
+    --panel:rgba(10,18,32,0.55);
+    --panel-raised:rgba(14,26,46,0.6);
+    --line:#1c2a40;
+    --cyan:#22D3EE;
+    --gold:#E8B94F;
+    --navy:#071428;
+    --text:#E7EEF7;
+    --text-dim:#8FA3BE;
+    --muted:#8FA3BE;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    background:var(--void);
+    color:var(--text);
+    font-family:'Space Grotesk',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    line-height:1.6;
+    min-height:100vh;
+    position:relative;
+  }
+  /* Fondo en dos capas fijas al viewport.
+     Sustituye a background-attachment:fixed, que en iOS Safari se dibuja
+     respecto al documento y deja la foto desencuadrada y con saltos al hacer
+     scroll. Separar imagen (::before) y velo (::after) permite además
+     reencuadrar la foto por media query sin duplicar el base64. */
+  body::before{
+    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+    /* La foto iba incrustada en base64 aqui dentro: 226 KB que el navegador
+       tenia que descargar y parsear antes de pintar nada, y que no se cacheaban
+       entre visitas por viajar dentro del HTML. Como fichero suelto se descarga
+       en paralelo y queda en cache. */
+    background:url('/fondo.jpg') center top / cover no-repeat;
+    /* WebP para quien lo soporte (98 KB frente a 170 KB). Si el navegador no
+       entiende image-set() o type(), descarta esta linea y usa la de arriba. */
+    background-image:image-set(url('/fondo.webp') type('image/webp'),
+                               url('/fondo.jpg') type('image/jpeg'));
+  }
+  body::after{
+    /* Absoluto, no fijo: en el original este degradado era una capa de fondo
+       con attachment por defecto, asi que se estiraba a lo largo de TODO el
+       documento (0.55 arriba, 0.75 al final de la pagina). Fijarlo al viewport
+       lo repetiria en cada pantalla y oscureceria de mas. */
+    content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+    background:linear-gradient(rgba(5,10,20,0.55), rgba(5,10,20,0.75));
+  }
+  a{color:var(--cyan);text-decoration:none;}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 24px;}
+
+  /* HEADER */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(5,10,20,0.85);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1100px;margin:0 auto;}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:600;font-size:17px;letter-spacing:0.5px;}
+  .brand img{width:58px;height:58px;border-radius:10px;object-fit:cover;flex-shrink:0;}
+  .brand-dot{width:9px;height:9px;border-radius:50%;background:var(--cyan);box-shadow:0 0 10px var(--cyan);}
+  .nav-links{display:flex;gap:28px;font-size:14px;color:var(--text-dim);}
+  .nav-links a:hover{color:var(--cyan);}
+
+  /* SELECTOR DE IDIOMA
+     Cuatro enlaces reales a /, /en/, /fr/ y /de/: cambiar de idioma es una
+     navegacion de verdad, no un repintado por JavaScript. El idioma activo se
+     marca con aria-current, que es a la vez la senal de accesibilidad y el
+     gancho del estilo resaltado. */
+  .lang-switch{
+    display:inline-flex;align-items:center;gap:2px;flex-shrink:0;
+    background:var(--panel-raised);border:1px solid var(--line);
+    border-radius:6px;padding:2px;
+  }
+  .lang-switch a{
+    display:inline-flex;align-items:center;
+    padding:3px 7px;border-radius:4px;
+    font-size:13px;line-height:1.45;color:var(--text-dim);
+    white-space:nowrap;
+  }
+  .lang-switch a:hover{color:var(--text);background:rgba(255,255,255,0.06);}
+  .lang-switch a[aria-current="page"]{
+    color:var(--void);background:var(--cyan);font-weight:600;
+  }
+
+  /* AVISO DE IDIOMA
+     Aparece solo en la primera visita si el navegador esta en otro idioma, y
+     unicamente sugiere: nunca redirige. Redirigir por JavaScript enviaria
+     tambien a Googlebot (que renderiza en en-US) a la version equivocada. */
+  .lang-hint{
+    position:fixed;left:12px;right:12px;bottom:12px;z-index:60;
+    display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+    max-width:640px;margin:0 auto;
+    background:rgba(10,18,32,0.96);border:1px solid var(--line);
+    border-radius:10px;padding:12px 14px;
+    box-shadow:0 8px 30px rgba(0,0,0,0.45);
+    backdrop-filter:blur(10px);
+  }
+  .lang-hint[hidden]{display:none;}
+  .lang-hint p{font-size:14px;color:var(--text);margin:0;flex:1 1 200px;min-width:0;}
+  .lang-hint a{
+    color:var(--void);background:var(--cyan);font-weight:600;font-size:14px;
+    padding:8px 14px;border-radius:6px;white-space:nowrap;
+  }
+  .lang-hint button{
+    background:none;border:none;color:var(--text-dim);cursor:pointer;
+    font-size:22px;line-height:1;padding:6px 8px;border-radius:6px;
+  }
+  .lang-hint button:hover{color:var(--text);background:rgba(255,255,255,0.06);}
+  /* Con la barra fija, un salto por ancla dejaria el titulo de la seccion
+     escondido detras. scroll-margin-top reserva su altura. */
+  section[id]{scroll-margin-top:100px;}
+
+  /* HERO */
+  .hero{
+    position:relative;overflow:hidden;
+    padding:100px 24px 80px;
+    text-align:center;
+    background:radial-gradient(ellipse at 50% -10%, rgba(34,211,238,0.12), transparent 60%);
+  }
+  .hero h1{
+    font-size:clamp(32px,5vw,54px);
+    font-weight:700;
+    letter-spacing:-1px;
+    max-width:820px;margin:0 auto 20px;
+  }
+  .hero .accent{color:var(--cyan);}
+  .hero p{
+    color:var(--text-dim);
+    max-width:560px;margin:0 auto 36px;
+    font-size:17px;
+  }
+  .btn{
+    display:inline-block;padding:14px 30px;border-radius:8px;
+    font-weight:600;font-size:15px;cursor:pointer;border:none;
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .btn-primary{background:var(--cyan);color:var(--void);}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(34,211,238,0.35);}
+  .btn-ghost{
+    background:transparent;color:var(--text);
+    border:1px solid var(--line);
+  }
+  .hero .btn-ghost{margin-left:12px;}
+  .btn-ghost:hover{border-color:var(--cyan);color:var(--cyan);}
+
+  /* SECTION LABELS */
+  .section{padding:70px 24px;}
+  .section-label{
+    text-align:center;color:var(--gold);
+    font-size:13px;letter-spacing:2px;text-transform:uppercase;
+    margin-bottom:10px;
+  }
+  .section-title{
+    text-align:center;font-size:clamp(26px,3.5vw,36px);
+    font-weight:700;margin-bottom:50px;
+  }
+
+  /* APPS GRID */
+  .apps-grid{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:20px;
+    /* La pildora de la destacada sobresale 13px por arriba. */
+    padding-top:13px;
+  }
+  .app-card{
+    background:linear-gradient(180deg, var(--panel-raised), var(--panel));
+    border:1px solid var(--line);
+    border-radius:14px;padding:26px;
+    transition:border-color .2s ease, transform .2s ease;
+    position:relative;
+  }
+  .app-card:hover{border-color:var(--cyan);transform:translateY(-4px);}
+
+  /* Producto estrella. Mismo lenguaje visual que .price-card.featured del pack
+     —borde dorado, degradado dorado, pildora con el texto de data-badge— para
+     que destacar no signifique inventarse un estilo nuevo.
+
+     Ocupa la fila entera: `1 / -1` vale igual con una columna que con cuatro,
+     asi que en el movil no cambia nada y en pantalla ancha queda como una
+     tarjeta de portada por encima de las otras cuatro. */
+  .app-card.featured{
+    grid-column:1 / -1;
+    border:1px solid var(--gold);
+    background:linear-gradient(180deg, rgba(232,185,79,0.08), var(--panel-raised));
+    padding-top:34px;
+  }
+  .app-card.featured::before{
+    content:attr(data-badge);
+    position:absolute;top:-13px;left:26px;
+    background:var(--gold);color:var(--navy);font-size:11px;font-weight:700;
+    padding:4px 14px;border-radius:20px;letter-spacing:0.5px;
+  }
+  .app-card.featured:hover{border-color:var(--gold);}
+  .app-card.featured p{font-size:15px;max-width:70ch;}
+  .app-icon{
+    width:44px;height:44px;border-radius:10px;
+    background:linear-gradient(135deg, var(--panel-raised), var(--void));
+    border:1px solid var(--line);
+    display:flex;align-items:center;justify-content:center;
+    font-weight:700;color:var(--cyan);font-size:16px;
+    margin-bottom:16px;
+    overflow:hidden;
+  }
+  .app-icon img{width:100%;height:100%;object-fit:cover;}
+  .app-card h3{font-size:18px;margin-bottom:8px;}
+  .app-card p{color:var(--text-dim);font-size:14px;margin-bottom:14px;}
+  .badge{
+    display:inline-block;font-size:11px;padding:3px 9px;border-radius:20px;
+    background:rgba(34,211,238,0.12);color:var(--cyan);
+    border:1px solid rgba(34,211,238,0.3);
+  }
+  .badge-soon{background:rgba(232,185,79,0.12);color:var(--gold);border-color:rgba(232,185,79,0.3);}
+  .badge-gift{background:rgba(232,185,79,0.15);color:var(--gold);border-color:rgba(232,185,79,0.4);font-weight:700;}
+  .app-subscribe{display:flex;gap:8px;margin-top:14px;}
+  .app-subscribe a{
+    flex:1;text-align:center;padding:9px 0;border-radius:7px;font-size:13px;font-weight:600;
+    border:1px solid var(--line);color:var(--text);transition:border-color .2s ease, color .2s ease;
+  }
+  .app-subscribe a:hover{border-color:var(--cyan);color:var(--cyan);}
+  .app-subscribe a.annual{background:var(--cyan);color:var(--void);border-color:var(--cyan);}
+  .app-subscribe a.annual:hover{opacity:0.9;color:var(--void);}
+
+  /* DESCARGA DE AIRBOT RADAR
+     El APK no vive en este repositorio: lo sirve la API tras comprobar que el
+     email tiene una suscripción activa. Aquí solo se recoge el email. */
+  .apk-gate{margin-top:14px;}
+  .apk-gate input{
+    width:100%;padding:9px 11px;border-radius:7px;
+    border:1px solid var(--line);background:rgba(255,255,255,0.03);
+    color:var(--text);font-size:13px;font-family:inherit;
+  }
+  .apk-gate input:focus{outline:none;border-color:var(--cyan);}
+  .apk-gate button{
+    width:100%;margin-top:8px;padding:10px 0;border-radius:7px;cursor:pointer;
+    border:1px solid var(--cyan);background:var(--cyan);color:var(--void);
+    font-size:13px;font-weight:600;font-family:inherit;
+    transition:opacity .2s ease;
+  }
+  .apk-gate button:hover{opacity:0.9;}
+  .apk-gate button[disabled]{opacity:0.55;cursor:default;}
+  .apk-msg{margin:9px 0 0;font-size:12px;line-height:1.55;display:none;}
+  .apk-msg.show{display:block;}
+  .apk-msg.err{color:var(--gold);}
+  .apk-msg.ok{color:var(--cyan);}
+  .apk-note{margin:9px 0 0;font-size:11.5px;line-height:1.5;color:var(--muted);}
+  .sr-only{
+    position:absolute;width:1px;height:1px;padding:0;margin:-1px;
+    overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;
+  }
+
+  /* RAYOS DORADOS ANIMADOS */
+  .light-rays{position:fixed;inset:0;pointer-events:none;z-index:1;overflow:hidden;}
+  .ray{
+    position:absolute;top:-20%;width:2px;height:140%;left:0;
+    background:linear-gradient(180deg, transparent, rgba(232,185,79,0.55), transparent);
+    filter:blur(1px);
+    animation:rayDrift 16s ease-in-out infinite;
+    opacity:0;
+  }
+  .ray:nth-child(1){animation-delay:0s;animation-duration:19s;--start:6%;--end:34%;}
+  .ray:nth-child(2){animation-delay:2s;animation-duration:23s;width:1px;--start:20%;--end:52%;}
+  .ray:nth-child(3){animation-delay:5s;animation-duration:17s;--start:38%;--end:14%;}
+  .ray:nth-child(4){animation-delay:1s;animation-duration:21s;width:1px;--start:60%;--end:88%;}
+  .ray:nth-child(5){animation-delay:7s;animation-duration:18s;--start:75%;--end:48%;}
+  .ray:nth-child(6){animation-delay:4s;animation-duration:25s;width:1px;--start:90%;--end:62%;}
+  @keyframes rayDrift{
+    0%{left:var(--start);transform:rotate(8deg);opacity:0;}
+    15%{opacity:0.8;}
+    50%{left:var(--end);opacity:0.5;}
+    85%{opacity:0.8;}
+    100%{left:var(--start);transform:rotate(8deg);opacity:0;}
+  }
+  .wrap{position:relative;z-index:2;}
+  .hero, .section, footer{position:relative;z-index:2;}
+
+  /* VERSIONES GRATUITAS
+     Sin componente nuevo: la tarjeta repite el degradado, el borde y el radio de
+     .app-card, y la insignia es la .badge de siempre. La rejilla copia la de
+     .pricing-grid, incluido su corte a una columna en 800px, para que las dos
+     filas de tarjetas que se ven seguidas se comporten igual al estrechar. */
+  .section-title-tight{margin-bottom:14px;}
+  .section-sub{
+    text-align:center;color:var(--text-dim);
+    font-size:16px;line-height:1.6;
+    max-width:620px;margin:0 auto 44px;
+  }
+  .free-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
+    max-width:920px;margin:0 auto;
+  }
+  @media(max-width:800px){.free-grid{grid-template-columns:1fr;}}
+  .free-card{
+    background:linear-gradient(180deg, var(--panel-raised), var(--panel));
+    border:1px solid var(--line);
+    border-radius:14px;padding:24px 22px;text-align:center;
+    transition:border-color .2s ease, transform .2s ease;
+  }
+  .free-card:hover{border-color:var(--cyan);transform:translateY(-4px);}
+  .free-card h3{font-size:17px;margin-bottom:12px;}
+  /* Las dos tarjetas descargables son <a>: heredan color para que el h3 no se
+     vuelva cian, y ocupan la tarjeta entera para que el area pulsable sea la
+     que se ve, no solo el texto. */
+  a.free-card{display:block;color:inherit;}
+
+  /* PRICING */
+  .pricing-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
+    max-width:920px;margin:0 auto;
+  }
+  @media(max-width:800px){.pricing-grid{grid-template-columns:1fr;}}
+  .price-card{
+    background:var(--panel-raised);border:1px solid var(--line);
+    border-radius:16px;padding:32px 26px;text-align:center;
+    position:relative;
+  }
+  .price-card.featured{
+    border:1px solid var(--gold);
+    background:linear-gradient(180deg, rgba(232,185,79,0.08), var(--panel-raised));
+  }
+  .price-card.featured::before{
+    content:attr(data-badge);
+    position:absolute;top:-13px;left:50%;transform:translateX(-50%);
+    background:var(--gold);color:var(--navy);font-size:11px;font-weight:700;
+    padding:4px 14px;border-radius:20px;letter-spacing:0.5px;
+  }
+  .price-card h3{font-size:14px;color:var(--text-dim);text-transform:uppercase;letter-spacing:1px;margin-bottom:14px;}
+  .price-card .price{font-size:40px;font-weight:700;margin-bottom:4px;}
+  .price-card .price span{font-size:15px;color:var(--text-dim);font-weight:400;}
+  .price-card .old-price{color:var(--text-dim);text-decoration:line-through;font-size:14px;margin-bottom:18px;}
+  .price-card ul{list-style:none;text-align:left;margin:20px 0;font-size:14px;color:var(--text-dim);}
+  .price-card li{padding:6px 0;padding-left:22px;position:relative;}
+  .price-card li::before{content:"✓";position:absolute;left:0;color:var(--cyan);}
+
+  /* BLOG */
+  .blog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;}
+  /* La tarjeta es un <a>: el area clicable es la tarjeta entera, no solo el
+     titulo. Hereda el color del texto para que no se pinte de cian de enlace. */
+  .blog-card{
+    display:flex;flex-direction:column;
+    background:var(--panel-raised);border:1px solid var(--line);
+    border-radius:14px;padding:24px;
+    color:var(--text);
+    transition:border-color .2s ease, transform .2s ease;
+  }
+  .blog-card:hover{border-color:var(--cyan);transform:translateY(-4px);}
+  .blog-card:hover h3{color:var(--cyan);}
+  .blog-card .tag{color:var(--gold);font-size:12px;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;display:block;}
+  .blog-card h3{font-size:17px;margin-bottom:10px;transition:color .2s ease;}
+  .blog-card p{color:var(--text-dim);font-size:14px;}
+  .blog-card time{
+    display:block;margin-top:auto;padding-top:14px;
+    color:var(--muted);font-size:12.5px;letter-spacing:0.3px;
+  }
+  .blog-all{text-align:center;margin-top:36px;}
+  .blog-all a{font-size:14.5px;font-weight:600;}
+
+  /* ARTICULO
+     Solo lo usan las paginas de /blog/: viven aqui para que el sitio entero
+     siga teniendo una unica hoja de estilos, la de esta plantilla. */
+  .post{padding:56px 24px 70px;position:relative;z-index:2;}
+  .post-wrap{max-width:720px;margin:0 auto;}
+  .post-head{margin-bottom:38px;}
+  .post-head .tag{
+    color:var(--gold);font-size:12px;letter-spacing:2px;
+    text-transform:uppercase;display:block;margin-bottom:14px;
+  }
+  .post-head h1{
+    font-size:clamp(27px,4.2vw,40px);font-weight:700;
+    letter-spacing:-0.5px;line-height:1.22;margin-bottom:16px;
+  }
+  .post-lead{color:var(--text-dim);font-size:17px;margin-bottom:18px;}
+  .post-meta{color:var(--muted);font-size:13px;letter-spacing:0.3px;}
+  .post-body h2{
+    font-size:clamp(19px,2.4vw,23px);font-weight:700;
+    margin:38px 0 14px;letter-spacing:-0.2px;
+  }
+  .post-body p{margin-bottom:18px;font-size:16.5px;line-height:1.75;color:var(--text);}
+  .post-body ul{list-style:none;margin:0 0 22px;}
+  .post-body li{
+    position:relative;padding:7px 0 7px 24px;
+    font-size:16px;line-height:1.7;color:var(--text-dim);
+  }
+  .post-body li::before{
+    content:"";position:absolute;left:2px;top:17px;
+    width:7px;height:7px;border-radius:50%;background:var(--cyan);
+  }
+  .post-nav{
+    margin-top:52px;padding-top:26px;border-top:1px solid var(--line);
+    display:flex;gap:20px;flex-wrap:wrap;justify-content:space-between;
+    font-size:14.5px;
+  }
+
+  /* FOOTER */
+  footer{
+    border-top:1px solid var(--line);
+    padding:40px 24px;text-align:center;
+    color:var(--text-dim);font-size:13px;
+  }
+  footer .brand{justify-content:center;margin-bottom:14px;}
+
+  /* ==========================================================================
+     RESPONSIVE
+     La base de este CSS es el diseno de escritorio y no se toca: todo lo que
+     hay aqui debajo son ajustes que solo se activan por debajo de cierto ancho
+     o en dispositivos tactiles.
+     ========================================================================== */
+
+  /* --- Red de seguridad global (no altera el escritorio) --- */
+  html{
+    /* clip recorta el desbordamiento horizontal sin crear un contenedor de
+       scroll propio; overflow-x:hidden si lo crea y rompe position:sticky. */
+    overflow-x:clip;
+    -webkit-text-size-adjust:100%;
+  }
+  img{max-width:100%;}
+  /* Si la barra no cabe, que baje de linea en vez de desbordar la pagina. */
+  nav{flex-wrap:wrap;gap:12px;}
+  .nav-links{flex-wrap:wrap;}
+  /* Los compuestos largos del aleman (DE) no deben empujar el ancho. */
+  h1,h2,h3,h4,.price-card .price{overflow-wrap:break-word;}
+
+  /* --- TABLET: 768-1024px --- */
+  @media (max-width:1024px){
+    .wrap{padding:0 20px;}
+    .section{padding:56px 20px;}
+    .hero{padding:80px 20px 64px;}
+    .apps-grid{grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px;}
+    .app-card{padding:22px;}
+    .blog-grid{grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;}
+  }
+
+  /* Franja en la que las tres tarjetas de precio siguen en fila pero apretadas. */
+  @media (max-width:900px){
+    .price-card{padding:28px 20px;}
+    .price-card .price{font-size:34px;}
+    .price-card ul{margin:16px 0;}
+  }
+
+  /* Una sola columna de precios (el corte a 1fr ya existia en .pricing-grid):
+     se limita el ancho para que las tarjetas no queden como bandas gigantes. */
+  @media (max-width:800px){
+    .pricing-grid{max-width:440px;gap:26px;}
+    .price-card{padding:32px 26px;}
+    .price-card .price{font-size:38px;}
+  }
+
+  /* --- MOVIL ANCHO / la barra deja de caber en una linea: <=720px --- */
+  @media (max-width:720px){
+    nav{padding:8px 16px;gap:6px;}
+    section[id]{scroll-margin-top:110px;}
+    .brand{font-size:15px;gap:8px;}
+    .brand img{width:34px;height:34px;}
+    /* La fila de enlaces pasa entera debajo de la marca y se centra. */
+    .nav-links{flex:1 0 100%;justify-content:center;align-items:center;gap:4px;font-size:14px;}
+    .nav-links > a{
+      min-height:44px;display:inline-flex;align-items:center;padding:0 12px;
+    }
+    /* Con cuatro enlaces en vez de un desplegable la fila es mas ancha, asi
+       que se permite envolver: el selector cae a su propia linea si no cabe. */
+    .nav-links{flex-wrap:wrap;row-gap:2px;}
+    .lang-switch a{padding:0 8px;min-height:40px;font-size:14px;}
+
+    .hero{padding:56px 20px 48px;}
+    .hero p{font-size:16px;margin-bottom:28px;}
+    /* Los dos botones del hero, apilados y centrados en vez de en linea. */
+    .hero .btn{display:block;width:100%;max-width:340px;margin:0 auto;}
+    .hero .btn-ghost{margin:12px auto 0;}
+
+    .section{padding:48px 20px;}
+    .section-title{margin-bottom:36px;}
+
+    .apk-gate input,
+    .apk-gate button{min-height:44px;font-size:16px;padding:11px 12px;}
+    .apk-gate button{margin-top:10px;}
+    .app-subscribe a{
+      min-height:44px;padding:0;
+      display:flex;align-items:center;justify-content:center;font-size:14px;
+    }
+  }
+
+  /* Fondo en moviles y tablets verticales.
+     La foto es panoramica (1600x668) y simetrica: con cover en vertical solo
+     se veria la franja central, que es cielo vacio. Anclandola a la izquierda
+     entra la torre del borde y la ciudad sigue reconociendose, sin bordes
+     duros porque la imagen sigue cubriendo toda la pantalla. */
+  @media (orientation:portrait) and (max-width:820px){
+    body::before{background-position:left center;}
+    /* El recorte vertical amplia la foto unas 5x, asi que las luces de la
+       torre pesan mucho mas que en escritorio: se oscurece algo mas el velo
+       para mantener el contraste del texto. */
+    body::after{background:linear-gradient(rgba(5,10,20,0.66), rgba(5,10,20,0.86));}
+  }
+
+  /* --- MOVIL: 375-428px --- */
+  @media (max-width:480px){
+    .wrap{padding:0 16px;}
+    .section{padding:40px 16px;}
+    .hero{padding:44px 16px 40px;}
+    .hero h1{font-size:clamp(28px,8.4vw,36px);letter-spacing:-0.5px;}
+
+    .apps-grid{grid-template-columns:1fr;gap:16px;}
+    .app-card{padding:20px;}
+    .app-subscribe{gap:10px;}
+
+    .section-sub{font-size:15px;margin-bottom:34px;}
+    .free-grid{gap:16px;}
+    .free-card{padding:20px 18px;}
+
+    .pricing-grid{max-width:none;gap:24px;}
+    .price-card{padding:28px 20px;}
+    .price-card .price{font-size:34px;}
+    .price-card ul{font-size:15px;}
+
+    .blog-grid{grid-template-columns:1fr;gap:16px;}
+    .blog-card{padding:20px;}
+    .post{padding:36px 20px 52px;}
+    .post-body p{font-size:16px;}
+
+    footer{padding:32px 16px;}
+    footer .brand{flex-wrap:wrap;justify-content:center;font-size:15px;}
+  }
+
+  /* --- MOVIL EN HORIZONTAL: pantalla muy baja --- */
+  @media (max-width:900px) and (max-height:500px) and (orientation:landscape){
+    header{position:relative;}
+    section[id]{scroll-margin-top:16px;}
+    .hero{padding:32px 20px 28px;}
+    .section{padding:40px 20px;}
+  }
+
+  /* --- DISPOSITIVOS TACTILES (cualquier ancho) ---
+     Garantiza el objetivo tactil de 44px y desactiva los hover, que en tactil
+     se quedan "pegados" tras el toque. */
+  @media (hover:none) and (pointer:coarse){
+    .btn{min-height:44px;}
+    .nav-links > a{min-height:44px;display:inline-flex;align-items:center;}
+    .lang-switch a{min-height:40px;}
+    .app-subscribe a{
+      min-height:44px;display:flex;align-items:center;justify-content:center;
+    }
+    .apk-gate input,.apk-gate button{min-height:44px;font-size:16px;}
+    .app-card:hover,.price-card:hover,.free-card:hover{transform:none;border-color:var(--line);}
+    .btn-primary:hover{transform:none;box-shadow:none;}
+  }
+
+  /* --- MOVIMIENTO REDUCIDO --- */
+  @media (prefers-reduced-motion:reduce){
+    .ray{animation:none;opacity:0.35;}
+    .btn,.app-card,.free-card,.app-subscribe a,.apk-gate button{transition:none;}
+  }
+</style>
+</head>
+<body>
+
+<div class="light-rays">
+  <div class="ray"></div>
+  <div class="ray"></div>
+  <div class="ray"></div>
+  <div class="ray"></div>
+  <div class="ray"></div>
+  <div class="ray"></div>
+</div>
+
+
+<header>
+  <nav>
+    <div class="brand" translate="no"><img src="/assets/logo.jpg" alt="">SILENTIUM SUPERNOVA</div>
+    <div class="nav-links">
+      <a href="/en/#apps">Apps</a>
+      <a href="/en/#precios">Pricing</a>
+      <a href="/en/blog/">Blog</a>
+      <div class="lang-switch" role="group" aria-label="Language">
+        <a href="/blog/dark-patterns-how-to-spot-them/" hreflang="es" lang="es" title="Español">🇪🇸 ES</a>
+        <a href="/en/blog/dark-patterns-how-to-spot-them/" hreflang="en" lang="en" aria-current="page">🇬🇧 EN</a>
+        <a href="/fr/blog/dark-patterns-how-to-spot-them/" hreflang="fr" lang="fr" title="Français">🇫🇷 FR</a>
+        <a href="/de/blog/dark-patterns-how-to-spot-them/" hreflang="de" lang="de" title="Deutsch">🇩🇪 DE</a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<article class="post">
+  <div class="post-wrap">
+
+    <header class="post-head">
+      <span class="tag">Ethical design</span>
+      <h1>Dark patterns: spotting them so you don't fall for them</h1>
+      <p class="post-lead">Common manipulative design patterns, and how Silentium avoids them.</p>
+      <p class="post-meta"><time datetime="2026-08-26">26 August 2026</time></p>
+    </header>
+
+    <div class="post-body">
+      <p>A dark pattern is not a design mistake. It is an interface working exactly as intended, only in favour of whoever built it and against whoever uses it. You recognise one by a specific feeling: you have just done something you did not want to do, and you could not point to the moment you decided to do it.</p>
+      <h2>The ones you meet most often</h2>
+      <ul>
+        <li>The uneven path. Accept is a large coloured button; decline is a grey link, on another screen, behind the word Options. Both decisions carry the same weight but cost wildly different effort.</li>
+        <li>Guilt in the button. The decline option is worded to shame you: no thanks, I prefer to stay unprotected. A form should not have opinions about you.</li>
+        <li>Manufactured urgency. Countdowns that reset on reload, only 2 left that have been left for months, notices that nineteen other people are looking at this right now.</li>
+        <li>Forced continuity. Subscribing takes two taps; cancelling takes finding a form, waiting for an email and sometimes writing to support.</li>
+        <li>Costs that surface late. The price on the first screen is not the final price, and the extras appear once you have already sunk ten minutes into the flow.</li>
+        <li>Asking until it wins. The same permission, notification or rating prompt returns again and again until you accept out of fatigue.</li>
+      </ul>
+      <h2>Why they are still here</h2>
+      <p>Because they are measured and they work. An A/B test measures conversions this week, not trust two years from now. If the pre-ticked box lifts sign-ups by 12%, the dashboard calls it an improvement, and nobody has a column on that same dashboard for the people who felt tricked and never came back.</p>
+      <h2>How to spot one in the moment</h2>
+      <p>Three quick questions cover almost everything:</p>
+      <ul>
+        <li>Does saying no cost the same as saying yes? If not, there is an intention behind it.</li>
+        <li>Does the urgency survive a page reload? If the countdown resets, it was scenery.</li>
+        <li>Do I know how to leave before I go in? Find the cancellation flow before signing up, not after.</li>
+      </ul>
+      <p>And one practical defence: when a screen rushes you, do the opposite and close it. If the offer was real, it will still be there tomorrow. If it was not there tomorrow, it was not an offer.</p>
+      <h2>What<span translate="no"> Silentium </span>commits to</h2>
+      <p>Here that turns into design rules, not a paragraph of good intentions:</p>
+      <ul>
+        <li>Nothing pre-ticked. Whatever you did not switch on is off.</li>
+        <li>No urgency counters, no manufactured scarcity.</li>
+        <li>The full price from the start, and cancellation by the same route as the sign-up.</li>
+        <li>Each permission is asked once, with the reason in front of it, and a no is a final no.</li>
+        <li>No cookie walls, because there are no analytics to consent to.</li>
+      </ul>
+      <p>Good design shows in whether you can change your mind without a fight. Anything that makes leaving, cancelling or saying no harder is telling you something about the business behind it, and it is usually the most honest part of the whole interface.</p>
+    </div>
+
+    <nav class="post-nav">
+      <a href="/en/blog/">&larr; All articles</a>
+      <a href="/en/">Back to home</a>
+    </nav>
+
+  </div>
+</article>
+
+<footer>
+  <div class="brand" translate="no"><img src="/assets/logo.jpg" alt="">SILENTIUM SUPERNOVA</div>
+  <p>&copy; 2026<span translate="no"> Silentium Supernova</span>. Local-first software, no analytics, no surveillance.</p>
+</footer>
+
+</body>
+</html>
