@@ -13,7 +13,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Silentium Supernova — Applications Android privées, sans traçage</title>
-<meta name="description" content="Cinq applications Android qui fonctionnent en local, sans analytique ni compte : bien-être mental, sons binauraux, nettoyage de la vie privée et alertes airdrops.">
+<meta name="description" content="Applications Android qui fonctionnent en local, sans analytique ni compte : devis de travaux avec IA, notes de séance pour thérapeutes, bien-être mental, sons binauraux et vie privée.">
 <link rel="canonical" href="https://silentiumsupernova.com/fr/">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <meta name="theme-color" content="#050a14">
@@ -41,7 +41,7 @@
 <meta property="og:locale:alternate" content="de_DE">
 <meta property="og:url" content="https://silentiumsupernova.com/fr/">
 <meta property="og:title" content="Silentium Supernova — Des logiciels qui ne vous surveillent pas">
-<meta property="og:description" content="Cinq applications Android privées, locales et sans analytique. Vos données restent sur votre appareil, jamais dans le cloud de qui que ce soit.">
+<meta property="og:description" content="Applications Android privées, locales et sans analytique, aussi pour les professionnels. Vos données restent sur votre appareil, jamais dans le cloud de qui que ce soit.">
 <meta property="og:image" content="https://silentiumsupernova.com/og-image.jpg">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
@@ -51,7 +51,7 @@
 <!-- Twitter / X -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Silentium Supernova — Des logiciels qui ne vous surveillent pas">
-<meta name="twitter:description" content="Cinq applications Android privées, locales et sans analytique. Vos données restent sur votre appareil, jamais dans le cloud de qui que ce soit.">
+<meta name="twitter:description" content="Applications Android privées, locales et sans analytique, aussi pour les professionnels. Vos données restent sur votre appareil, jamais dans le cloud de qui que ce soit.">
 <meta name="twitter:image" content="https://silentiumsupernova.com/og-image.jpg">
 <meta name="twitter:image:alt" content="Silentium Supernova — Des logiciels qui ne vous surveillent pas. Cinq applications Android privées, sans analytique ni publicité.">
 
@@ -300,6 +300,36 @@
   .app-subscribe a:hover{border-color:var(--cyan);color:var(--cyan);}
   .app-subscribe a.annual{background:var(--cyan);color:var(--void);border-color:var(--cyan);}
   .app-subscribe a.annual:hover{opacity:0.9;color:var(--void);}
+
+  /* PARA PROFESIONALES (Obrix y Confidencia)
+     Dos tarjetas grandes con el mismo lenguaje que .app-card.featured: borde
+     dorado, precio propio, lista de ventajas, pago y descarga gratuita. */
+  .pro-grid{
+    display:grid;grid-template-columns:repeat(2,1fr);gap:24px;
+    max-width:1040px;margin:0 auto;
+  }
+  @media(max-width:860px){.pro-grid{grid-template-columns:1fr;}}
+  .pro-card{
+    background:linear-gradient(180deg, rgba(232,185,79,0.08), var(--panel-raised));
+    border:1px solid var(--gold);border-radius:16px;padding:30px;
+    display:flex;flex-direction:column;
+  }
+  .pro-head{display:flex;align-items:center;gap:14px;margin-bottom:14px;}
+  .pro-head .app-icon{margin-bottom:0;width:56px;height:56px;border-radius:12px;}
+  .pro-card h3{font-size:22px;margin:0;}
+  .pro-tagline{color:var(--gold);font-size:14px;font-weight:600;margin:2px 0 0;}
+  .pro-card p.pro-desc{color:var(--text-dim);font-size:15px;line-height:1.6;margin-bottom:16px;}
+  .pro-card ul{list-style:none;margin:0 0 20px;font-size:14px;color:var(--text-dim);}
+  .pro-card li{padding:5px 0 5px 22px;position:relative;}
+  .pro-card li::before{content:"✓";position:absolute;left:0;color:var(--cyan);}
+  .pro-price{font-size:34px;font-weight:700;margin-top:auto;}
+  .pro-price span{font-size:15px;color:var(--text-dim);font-weight:400;}
+  .pro-year{color:var(--text-dim);font-size:13px;margin-bottom:4px;}
+  .pro-free{display:block;text-align:center;margin-top:10px;padding:10px 0;border-radius:7px;
+    font-size:13px;font-weight:600;border:1px dashed var(--gold);color:var(--gold);
+    transition:background .2s ease;}
+  .pro-free:hover{background:rgba(232,185,79,0.10);}
+  .pro-free small{display:block;font-weight:400;color:var(--text-dim);font-size:11.5px;margin-top:2px;}
 
   /* DESCARGA DE AIRBOT RADAR
      El APK no vive en este repositorio: lo sirve la API tras comprobar que el
@@ -647,6 +677,7 @@
   <nav>
     <div class="brand" translate="no"><img src="/assets/logo.jpg" alt="">SILENTIUM SUPERNOVA</div>
     <div class="nav-links">
+      <a href="/fr/#pro">Professionnels</a>
       <a href="/fr/#apps">Apps</a>
       <a href="/fr/#precios">Tarifs</a>
       <a href="/fr/blog/">Blog</a>
@@ -662,9 +693,69 @@
 
 <section class="hero">
   <h1>Des logiciels qui <span class="accent">ne vous surveillent pas</span>.</h1>
-  <p>Cinq applications privées, locales et sans analytique. Vos données restent sur votre appareil — jamais dans le cloud de qui que ce soit.</p>
+  <p>Des applications privées, locales et sans analytique, aussi pour votre travail. Vos données restent sur votre appareil — jamais dans le cloud de qui que ce soit.</p>
   <a href="#precios" class="btn btn-primary">Voir les forfaits</a>
   <a href="#apps" class="btn btn-ghost">Découvrir les apps</a>
+</section>
+
+<section class="section" id="pro">
+  <div class="wrap">
+    <div class="section-label">Pour les professionnels</div>
+    <h2 class="section-title section-title-tight">Des outils pour votre activité</h2>
+    <p class="section-sub">Deux applications pensées pour le travail, aussi privées que les autres : tout reste sur votre appareil, intelligence artificielle comprise.</p>
+    <div class="pro-grid">
+
+      <div class="pro-card">
+        <div class="pro-head">
+          <div class="app-icon"><img src="/assets/obrix.jpg" alt=""></div>
+          <div>
+            <h3 translate="no">Obrix</h3>
+            <p class="pro-tagline">Devis de travaux et de rénovation, au centime près.</p>
+          </div>
+        </div>
+        <p class="pro-desc">Décrivez la pièce à l’écrit ou à la voix et l’IA, qui tourne sur l’appareil sans internet, remplit les dimensions et les travaux. Obrix calcule matériaux, main-d’œuvre avec charges patronales, frais généraux, bénéfice et TVA, et vous donne un PDF professionnel avec votre logo, vos conditions et les signatures.</p>
+        <ul>
+          <li>Catalogue de postes prêt à l’emploi</li>
+          <li>Salles de bain, cuisines et chambres complètes avec métrés automatiques</li>
+          <li>IA locale : écrivez ou dictez, sans internet</li>
+          <li>PDF avec votre logo, prêt pour le client</li>
+          <li>Espagne, France, Allemagne et Royaume-Uni · 4 langues</li>
+        </ul>
+        <div class="pro-price">14,95€<span>/mois</span></div>
+        <div class="pro-year">ou 140€ par an</div>
+        <div class="app-subscribe">
+          <a href="https://buy.stripe.com/00w6oI0eV2fec1nfRP9oc0a" target="_blank" rel="noopener">Mensuel</a>
+          <a href="https://buy.stripe.com/fZufZigdT9HG6H3fRP9oc0b" target="_blank" rel="noopener" class="annual">Annuel</a>
+        </div>
+        <a class="pro-free" href="https://api.silentiumsupernova.com/download/obrix">Télécharger gratuitement<small>Version gratuite : 1 chantier, sans carte ni inscription</small></a>
+      </div>
+
+      <div class="pro-card">
+        <div class="pro-head">
+          <div class="app-icon"><img src="/assets/confidencia.jpg" alt=""></div>
+          <div>
+            <h3 translate="no">Confidencia</h3>
+            <p class="pro-tagline">Notes de séance pour thérapeutes, sans quitter votre cabinet.</p>
+          </div>
+        </div>
+        <p class="pro-desc">Écrivez ou dictez vos notes après chaque séance et l’IA, sur l’appareil, vous prépare un résumé clair et ordonné. Rien n’est envoyé sur un serveur : la confidentialité de vos patients reste entre vos seules mains.</p>
+        <ul>
+          <li>Résumés par IA locale, sans internet</li>
+          <li>Dictée vocale sur l’appareil même</li>
+          <li>Sans compte, sans cloud, sans analytique</li>
+          <li>Conçue pour les psychologues et thérapeutes</li>
+        </ul>
+        <div class="pro-price">4,95€<span>/mois</span></div>
+        <div class="pro-year">ou 25,95€ par an</div>
+        <div class="app-subscribe">
+          <a href="https://buy.stripe.com/6oUdRaf9P076d5r5db9oc00" target="_blank" rel="noopener">Mensuel</a>
+          <a href="https://buy.stripe.com/6oUdRa0eV4nmfdz4979oc01" target="_blank" rel="noopener" class="annual">Annuel</a>
+        </div>
+        <a class="pro-free" href="https://api.silentiumsupernova.com/download/confidencia">Télécharger gratuitement<small>Version gratuite : 1 séance, sans carte ni inscription</small></a>
+      </div>
+
+    </div>
+  </div>
 </section>
 
 <section class="section" id="apps">

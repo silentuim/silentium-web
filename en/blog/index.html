@@ -317,6 +317,36 @@
   .app-subscribe a.annual{background:var(--cyan);color:var(--void);border-color:var(--cyan);}
   .app-subscribe a.annual:hover{opacity:0.9;color:var(--void);}
 
+  /* PARA PROFESIONALES (Obrix y Confidencia)
+     Dos tarjetas grandes con el mismo lenguaje que .app-card.featured: borde
+     dorado, precio propio, lista de ventajas, pago y descarga gratuita. */
+  .pro-grid{
+    display:grid;grid-template-columns:repeat(2,1fr);gap:24px;
+    max-width:1040px;margin:0 auto;
+  }
+  @media(max-width:860px){.pro-grid{grid-template-columns:1fr;}}
+  .pro-card{
+    background:linear-gradient(180deg, rgba(232,185,79,0.08), var(--panel-raised));
+    border:1px solid var(--gold);border-radius:16px;padding:30px;
+    display:flex;flex-direction:column;
+  }
+  .pro-head{display:flex;align-items:center;gap:14px;margin-bottom:14px;}
+  .pro-head .app-icon{margin-bottom:0;width:56px;height:56px;border-radius:12px;}
+  .pro-card h3{font-size:22px;margin:0;}
+  .pro-tagline{color:var(--gold);font-size:14px;font-weight:600;margin:2px 0 0;}
+  .pro-card p.pro-desc{color:var(--text-dim);font-size:15px;line-height:1.6;margin-bottom:16px;}
+  .pro-card ul{list-style:none;margin:0 0 20px;font-size:14px;color:var(--text-dim);}
+  .pro-card li{padding:5px 0 5px 22px;position:relative;}
+  .pro-card li::before{content:"✓";position:absolute;left:0;color:var(--cyan);}
+  .pro-price{font-size:34px;font-weight:700;margin-top:auto;}
+  .pro-price span{font-size:15px;color:var(--text-dim);font-weight:400;}
+  .pro-year{color:var(--text-dim);font-size:13px;margin-bottom:4px;}
+  .pro-free{display:block;text-align:center;margin-top:10px;padding:10px 0;border-radius:7px;
+    font-size:13px;font-weight:600;border:1px dashed var(--gold);color:var(--gold);
+    transition:background .2s ease;}
+  .pro-free:hover{background:rgba(232,185,79,0.10);}
+  .pro-free small{display:block;font-weight:400;color:var(--text-dim);font-size:11.5px;margin-top:2px;}
+
   /* DESCARGA DE AIRBOT RADAR
      El APK no vive en este repositorio: lo sirve la API tras comprobar que el
      email tiene una suscripción activa. Aquí solo se recoge el email. */
@@ -663,6 +693,7 @@
   <nav>
     <div class="brand" translate="no"><img src="/assets/logo.jpg" alt="">SILENTIUM SUPERNOVA</div>
     <div class="nav-links">
+      <a href="/en/#pro">Professionals</a>
       <a href="/en/#apps">Apps</a>
       <a href="/en/#precios">Pricing</a>
       <a href="/en/blog/">Blog</a>
