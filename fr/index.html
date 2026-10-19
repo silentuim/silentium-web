@@ -13,7 +13,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Silentium Supernova — Applications Android privées, sans traçage</title>
-<meta name="description" content="Applications Android qui fonctionnent en local, sans analytique ni compte : devis de travaux avec IA, notes de séance pour thérapeutes, bien-être mental, sons binauraux et vie privée.">
+<meta name="description" content="Applications Android qui fonctionnent en local, sans analytique ni compte : devis de travaux avec IA, notes de séance pour thérapeutes, mémoriser en se promenant chez soi, bien-être mental, sons binauraux et vie privée.">
 <link rel="canonical" href="https://silentiumsupernova.com/fr/">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <meta name="theme-color" content="#050a14">
@@ -300,6 +300,13 @@
   .app-subscribe a:hover{border-color:var(--cyan);color:var(--cyan);}
   .app-subscribe a.annual{background:var(--cyan);color:var(--void);border-color:var(--cyan);}
   .app-subscribe a.annual:hover{opacity:0.9;color:var(--void);}
+
+  /* PALACIO (novedad): reutiliza .pro-grid y .pro-card; la segunda tarjeta
+     explica los dos usos (estudiar y recordar). */
+  .palacio-how h3{margin-bottom:6px;}
+  .palacio-how h4{color:var(--gold);font-size:16px;margin:18px 0 6px;}
+  .palacio-how p{color:var(--text-dim);font-size:15px;line-height:1.6;margin:0;}
+  .palacio-how p.palacio-note{margin-top:auto;padding-top:20px;font-size:13px;}
 
   /* PARA PROFESIONALES (Obrix y Confidencia)
      Dos tarjetas grandes con el mismo lenguaje que .app-card.featured: borde
@@ -677,6 +684,7 @@
   <nav>
     <div class="brand" translate="no"><img src="/assets/logo.jpg" alt="">SILENTIUM SUPERNOVA</div>
     <div class="nav-links">
+      <a href="/fr/#palacio" translate="no">Palacio</a>
       <a href="/fr/#pro">Professionnels</a>
       <a href="/fr/#apps">Apps</a>
       <a href="/fr/#precios">Tarifs</a>
@@ -696,6 +704,52 @@
   <p>Des applications privées, locales et sans analytique, aussi pour votre travail. Vos données restent sur votre appareil — jamais dans le cloud de qui que ce soit.</p>
   <a href="#precios" class="btn btn-primary">Voir les forfaits</a>
   <a href="#apps" class="btn btn-ghost">Découvrir les apps</a>
+</section>
+
+<section class="section" id="palacio">
+  <div class="wrap">
+    <div class="section-label">Nouveauté</div>
+    <h2 class="section-title section-title-tight">Votre mémoire, rangée dans votre propre maison</h2>
+    <p class="section-sub">Une nouvelle application pour étudier et pour se souvenir. Elle utilise la plus ancienne technique de mémoire qui existe, le palais de la mémoire, avec la caméra du téléphone : chaque information reste attachée à un endroit réel de votre maison.</p>
+    <div class="pro-grid">
+
+      <div class="pro-card">
+        <div class="pro-head">
+          <div class="app-icon"><img src="/assets/palacio.jpg" alt=""></div>
+          <div>
+            <h3 translate="no">Palacio</h3>
+            <p class="pro-tagline">Mémorisez en vous promenant chez vous.</p>
+          </div>
+        </div>
+        <p class="pro-desc">Vous mesurez une pièce une seule fois avec la caméra et, à partir de là, vous pouvez accrocher dans ses coins tout ce que vous voulez retenir : des fiches de révision, l’endroit où sont les objets ou des messages vocaux. En revenant, la caméra vous guide jusqu’à chaque endroit et vous montre ce que vous y avez laissé. Le cerveau retient les lieux bien mieux que les listes.</p>
+        <ul>
+          <li>Créez des fiches à partir d’une photo du livre, en dictant ou en écrivant</li>
+          <li>Révisez en marchant : allez à l’endroit, visez et répondez</li>
+          <li>Répétition espacée : chaque fiche revient juste avant que vous l’oubliiez</li>
+          <li>« Où est… ? » : cherchez à la voix et une flèche vous mène jusqu’à l’endroit</li>
+          <li>Des messages vocaux de la famille qui se jouent à leur place</li>
+          <li>Tout reste dans le téléphone, sans internet ni compte · 4 langues</li>
+        </ul>
+        <div class="pro-price">2,99€<span>/mois</span></div>
+        <div class="pro-year">ou 24,99€ par an</div>
+        <div class="app-subscribe">
+          <a href="https://buy.stripe.com/4gM14o7Hn3jic1n9tr9oc0c" target="_blank" rel="noopener">Mensuel</a>
+          <a href="https://buy.stripe.com/dRmbJ2d1H0767L73539oc0d" target="_blank" rel="noopener" class="annual">Annuel</a>
+        </div>
+        <a class="pro-free" href="https://api.silentiumsupernova.com/download/palacio">Télécharger gratuitement<small>Version gratuite : 1 pièce, sans carte ni inscription</small></a>
+      </div>
+
+      <div class="pro-card palacio-how">
+        <h3>Deux façons de l’utiliser</h3>
+        <h4>Pour étudier</h4>
+        <p>Concours, examens ou langues. Prenez en photo la page du livre et Palacio crée les fiches en cachant l’information clé : une date, un nombre ou le mot important. Ensuite, vous les placez dans la maison, la Constitution sur le miroir et les articles sur la porte, et vous révisez en marchant.</p>
+        <h4>Pour se souvenir</h4>
+        <p>Pensée aussi pour les personnes âgées ou ayant des troubles de la mémoire, et pour ceux qui s’en occupent. Enregistrez où sont les clés, les lunettes ou les médicaments, avec de grands caractères et peu de boutons. Un fils ou une fille peut enregistrer un message qui se joue quand on vise cet endroit : « Papa, tes cachets du soir sont ici. »</p>
+        <p class="palacio-note">Les photos, les fiches et les messages restent uniquement sur votre téléphone. Nécessite un Android compatible avec la réalité augmentée de Google (ARCore).</p>
+      </div>
+
+    </div>
+  </div>
 </section>
 
 <section class="section" id="pro">
@@ -721,6 +775,7 @@
           <li>PDF avec votre logo, prêt pour le client</li>
           <li>Espagne, France, Allemagne et Royaume-Uni · 4 langues</li>
           <li>Mesure avec la caméra : sol, hauteur, portes et fenêtres</li>
+          <li>Rayons X : photographiez et tracez tuyaux et câbles avant de fermer le mur, puis voyez-les à travers avant de percer</li>
         </ul>
         <div class="pro-price">14,95€<span>/mois</span></div>
         <div class="pro-year">ou 140€ par an</div>

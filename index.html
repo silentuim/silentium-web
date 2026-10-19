@@ -13,7 +13,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Silentium Supernova — Apps Android privadas, sin rastreo</title>
-<meta name="description" content="Apps Android que funcionan en local, sin analíticas ni cuentas: presupuestos de obra con IA, notas de sesión para terapeutas, bienestar mental, sonidos binaurales y privacidad.">
+<meta name="description" content="Apps Android que funcionan en local, sin analíticas ni cuentas: presupuestos de obra con IA, notas de sesión para terapeutas, memorizar paseando por tu casa, bienestar mental, sonidos binaurales y privacidad.">
 <link rel="canonical" href="https://silentiumsupernova.com/">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <meta name="theme-color" content="#050a14">
@@ -300,6 +300,13 @@
   .app-subscribe a:hover{border-color:var(--cyan);color:var(--cyan);}
   .app-subscribe a.annual{background:var(--cyan);color:var(--void);border-color:var(--cyan);}
   .app-subscribe a.annual:hover{opacity:0.9;color:var(--void);}
+
+  /* PALACIO (novedad): reutiliza .pro-grid y .pro-card; la segunda tarjeta
+     explica los dos usos (estudiar y recordar). */
+  .palacio-how h3{margin-bottom:6px;}
+  .palacio-how h4{color:var(--gold);font-size:16px;margin:18px 0 6px;}
+  .palacio-how p{color:var(--text-dim);font-size:15px;line-height:1.6;margin:0;}
+  .palacio-how p.palacio-note{margin-top:auto;padding-top:20px;font-size:13px;}
 
   /* PARA PROFESIONALES (Obrix y Confidencia)
      Dos tarjetas grandes con el mismo lenguaje que .app-card.featured: borde
@@ -677,6 +684,7 @@
   <nav>
     <div class="brand" translate="no"><img src="/assets/logo.jpg" alt="">SILENTIUM SUPERNOVA</div>
     <div class="nav-links">
+      <a href="/#palacio" translate="no">Palacio</a>
       <a href="/#pro">Profesionales</a>
       <a href="/#apps">Apps</a>
       <a href="/#precios">Precios</a>
@@ -696,6 +704,52 @@
   <p>Apps privadas, locales y sin analíticas, también para tu trabajo. Tus datos se quedan en tu dispositivo — nunca en la nube de nadie.</p>
   <a href="#precios" class="btn btn-primary">Ver planes</a>
   <a href="#apps" class="btn btn-ghost">Explorar apps</a>
+</section>
+
+<section class="section" id="palacio">
+  <div class="wrap">
+    <div class="section-label">Novedad</div>
+    <h2 class="section-title section-title-tight">Tu memoria, colocada en tu propia casa</h2>
+    <p class="section-sub">Una app nueva para estudiar y para recordar. Usa la técnica de memoria más antigua que existe, el palacio de la memoria, con la cámara del móvil: cada dato se queda pegado a un sitio real de tu casa.</p>
+    <div class="pro-grid">
+
+      <div class="pro-card">
+        <div class="pro-head">
+          <div class="app-icon"><img src="/assets/palacio.jpg" alt=""></div>
+          <div>
+            <h3 translate="no">Palacio</h3>
+            <p class="pro-tagline">Memoriza paseando por tu casa.</p>
+          </div>
+        </div>
+        <p class="pro-desc">Mides una habitación una sola vez con la cámara y, desde ese momento, puedes pegar en sus rincones lo que quieras recordar: tarjetas de estudio, dónde están las cosas o mensajes de voz. Al volver, la cámara te lleva a cada sitio y te enseña lo que dejaste allí. El cerebro recuerda los lugares mucho mejor que las listas.</p>
+        <ul>
+          <li>Crea tarjetas con una foto del libro, dictando o escribiendo</li>
+          <li>Repasa paseando: vas al sitio, apuntas y respondes</li>
+          <li>Repaso espaciado: cada tarjeta vuelve justo antes de que la olvides</li>
+          <li>«¿Dónde está…?»: búscalo con la voz y una flecha te lleva hasta el sitio</li>
+          <li>Mensajes de voz de la familia que suenan en su sitio</li>
+          <li>Todo dentro del móvil, sin internet ni cuentas · 4 idiomas</li>
+        </ul>
+        <div class="pro-price">2,99€<span>/mes</span></div>
+        <div class="pro-year">o 24,99€ al año</div>
+        <div class="app-subscribe">
+          <a href="https://buy.stripe.com/4gM14o7Hn3jic1n9tr9oc0c" target="_blank" rel="noopener">Mensual</a>
+          <a href="https://buy.stripe.com/dRmbJ2d1H0767L73539oc0d" target="_blank" rel="noopener" class="annual">Anual</a>
+        </div>
+        <a class="pro-free" href="https://api.silentiumsupernova.com/download/palacio">Descargar gratis<small>Versión gratuita: 1 habitación, sin tarjeta ni registro</small></a>
+      </div>
+
+      <div class="pro-card palacio-how">
+        <h3>Dos formas de usarlo</h3>
+        <h4>Para estudiar</h4>
+        <p>Oposiciones, exámenes o idiomas. Haz una foto a la página del libro y Palacio crea las tarjetas tapando el dato clave: una fecha, un número o la palabra importante. Después las colocas por la casa, la Constitución en el espejo y los artículos en la puerta, y repasas paseando.</p>
+        <h4>Para recordar</h4>
+        <p>Pensada también para personas mayores o con problemas de memoria, y para quienes las cuidan. Guarda dónde están las llaves, las gafas o las medicinas, con letra grande y pocos botones. Un hijo o una hija puede grabar un mensaje que suena al apuntar a ese sitio: «Papá, las pastillas de la noche están aquí».</p>
+        <p class="palacio-note">Las fotos, las tarjetas y los mensajes se quedan solo en tu móvil. Necesita un Android compatible con la realidad aumentada de Google (ARCore).</p>
+      </div>
+
+    </div>
+  </div>
 </section>
 
 <section class="section" id="pro">
@@ -721,6 +775,7 @@
           <li>PDF con tu logo, listo para el cliente</li>
           <li>España, Francia, Alemania y Reino Unido · 4 idiomas</li>
           <li>Mide con la cámara: suelo, alto, puertas y ventanas</li>
+          <li>Rayos X: fotografía y traza tubos y cables antes de cerrar la pared, y velos a través de ella antes de taladrar</li>
         </ul>
         <div class="pro-price">14,95€<span>/mes</span></div>
         <div class="pro-year">o 140€ al año</div>
