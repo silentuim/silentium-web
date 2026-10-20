@@ -13,7 +13,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Silentium Supernova — Applications Android privées, sans traçage</title>
-<meta name="description" content="Applications Android qui fonctionnent en local, sans analytique ni compte : devis de travaux avec IA, notes de séance pour thérapeutes, mémoriser en se promenant chez soi, bien-être mental, sons binauraux et vie privée.">
+<meta name="description" content="Applications Android qui fonctionnent en local, sans analytique ni compte : devis de travaux avec IA, notes de séance pour thérapeutes, mémoriser en se promenant chez soi, lithophanies et lampes pour l’impression 3D, bien-être mental, sons binauraux et vie privée.">
 <link rel="canonical" href="https://silentiumsupernova.com/fr/">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <meta name="theme-color" content="#050a14">
@@ -307,6 +307,11 @@
   .palacio-how h4{color:var(--gold);font-size:16px;margin:18px 0 6px;}
   .palacio-how p{color:var(--text-dim);font-size:15px;line-height:1.6;margin:0;}
   .palacio-how p.palacio-note{margin-top:auto;padding-top:20px;font-size:13px;}
+
+  /* LITHO3D: mismas tarjetas que Palacio, con dos descargas (movil y ordenador)
+     y la foto de una lampara de litofania en la tarjeta de usos. */
+  .pro-free + .pro-free{margin-top:8px;}
+  .litho-shot{width:100%;border-radius:10px;display:block;margin:4px 0 6px;border:1px solid rgba(232,185,79,0.25);}
 
   /* PARA PROFESIONALES (Obrix y Confidencia)
      Dos tarjetas grandes con el mismo lenguaje que .app-card.featured: borde
@@ -685,6 +690,7 @@
     <div class="brand" translate="no"><img src="/assets/logo.jpg" alt="">SILENTIUM SUPERNOVA</div>
     <div class="nav-links">
       <a href="/fr/#palacio" translate="no">Palacio</a>
+      <a href="/fr/#litho3d" translate="no">Litho3D</a>
       <a href="/fr/#pro">Professionnels</a>
       <a href="/fr/#apps">Apps</a>
       <a href="/fr/#precios">Tarifs</a>
@@ -746,6 +752,56 @@
         <h4>Pour se souvenir</h4>
         <p>Pensée aussi pour les personnes âgées ou ayant des troubles de la mémoire, et pour ceux qui s’en occupent. Enregistrez où sont les clés, les lunettes ou les médicaments, avec de grands caractères et peu de boutons. Un fils ou une fille peut enregistrer un message qui se joue quand on vise cet endroit : « Papa, tes cachets du soir sont ici. »</p>
         <p class="palacio-note">Les photos, les fiches et les messages restent uniquement sur votre téléphone. Nécessite un Android compatible avec la réalité augmentée de Google (ARCore).</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section" id="litho3d">
+  <div class="wrap">
+    <div class="section-label">Impression 3D</div>
+    <h2 class="section-title section-title-tight">De votre photo à votre imprimante 3D</h2>
+    <p class="section-sub">Lithophanies, lampes et figurines en relief, prêtes à imprimer sur n’importe quelle imprimante 3D. Concevez-les sur votre téléphone ou votre ordinateur et voyez-les en 3D avant d’utiliser du filament.</p>
+    <div class="pro-grid">
+
+      <div class="pro-card">
+        <div class="pro-head">
+          <div class="app-icon"><img src="/assets/litho3d.jpg" alt=""></div>
+          <div>
+            <h3 translate="no">Litho3D</h3>
+            <p class="pro-tagline">Lithophanies, lampes et figurines pour votre imprimante.</p>
+          </div>
+        </div>
+        <p class="pro-desc">Choisissez une photo ou dessinez votre lampe du bout du doigt, faites-la tourner en 3D et voyez son rendu lumière allumée. Quand elle vous plaît, Litho3D crée le fichier STL pour votre imprimante : sans internet, sans compte et sans envoyer vos photos nulle part.</p>
+        <ul>
+          <li>Lithophanies plates, courbes, cylindriques (lampe) et en cœur</li>
+          <li>Vue 3D « allumée » : la photo avec la lumière derrière avant d’imprimer</li>
+          <li>Des lampes à votre goût : silhouette, torsion, nervures, vagues et trous</li>
+          <li>Socle pour ampoule E14 ou E27, ou pour lumière LED</li>
+          <li>Figurines debout, porte-clés et médaillons en relief à partir d’une photo</li>
+          <li>Android et Windows · 4 langues · tout reste sur votre appareil</li>
+        </ul>
+        <div class="pro-price">4,95€<span>/mois</span></div>
+        <div class="pro-year">ou 39,95€ par an</div>
+        <div class="app-subscribe">
+          <a href="https://buy.stripe.com/fZufZi4vb2fe7L7fRP9oc0e" target="_blank" rel="noopener">Mensuel</a>
+          <a href="https://buy.stripe.com/fZueVe3r78DC5CZfRP9oc0f" target="_blank" rel="noopener" class="annual">Annuel</a>
+        </div>
+        <a class="pro-free" href="https://api.silentiumsupernova.com/download/litho3d">Télécharger gratuitement pour Android<small>Version gratuite : tout concevoir et créer des lithophanies plates, sans carte ni inscription</small></a>
+        <a class="pro-free" href="https://api.silentiumsupernova.com/download/litho3d-windows">Télécharger gratuitement pour Windows<small>Décompressez le zip et ouvrez Litho3D.exe. Si Windows vous avertit, cliquez sur « Informations complémentaires » puis « Exécuter quand même ».</small></a>
+      </div>
+
+      <div class="pro-card palacio-how">
+        <h3>Trois choses à créer</h3>
+        <img class="litho-shot" src="/assets/litho3d-banner.jpg" alt="Lampe lithophanie imprimée en 3D avec un paysage illuminé" loading="lazy">
+        <h4>Lithophanies</h4>
+        <p>Une photo qui apparaît quand la lumière est derrière. Choisissez la forme, la taille, l’épaisseur et le cadre, et voyez-la en 3D éteinte et allumée.</p>
+        <h4>Lampes</h4>
+        <p>Dessinez la silhouette du doigt ou partez d’un vase, d’un globe ou d’une cloche. Ajoutez torsion, nervures, vagues et trous, et choisissez le socle pour votre ampoule ou votre LED.</p>
+        <h4>Figurines en relief</h4>
+        <p>À partir d’une photo sur fond uni : une figurine debout avec son socle, un porte-clés ou un médaillon. Litho3D retire le fond et donne du relief selon la luminosité.</p>
+        <p class="palacio-note">Compatible avec toute imprimante à filament : Anycubic, Creality, Bambu Lab, Prusa, Elegoo, Sovol… Le fichier STL s’ouvre dans Cura, Anycubic Slicer, Bambu Studio, PrusaSlicer ou Orca.</p>
       </div>
 
     </div>

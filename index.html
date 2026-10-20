@@ -13,7 +13,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Silentium Supernova — Apps Android privadas, sin rastreo</title>
-<meta name="description" content="Apps Android que funcionan en local, sin analíticas ni cuentas: presupuestos de obra con IA, notas de sesión para terapeutas, memorizar paseando por tu casa, bienestar mental, sonidos binaurales y privacidad.">
+<meta name="description" content="Apps Android que funcionan en local, sin analíticas ni cuentas: presupuestos de obra con IA, notas de sesión para terapeutas, memorizar paseando por tu casa, litofanías y lámparas para impresión 3D, bienestar mental, sonidos binaurales y privacidad.">
 <link rel="canonical" href="https://silentiumsupernova.com/">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <meta name="theme-color" content="#050a14">
@@ -307,6 +307,11 @@
   .palacio-how h4{color:var(--gold);font-size:16px;margin:18px 0 6px;}
   .palacio-how p{color:var(--text-dim);font-size:15px;line-height:1.6;margin:0;}
   .palacio-how p.palacio-note{margin-top:auto;padding-top:20px;font-size:13px;}
+
+  /* LITHO3D: mismas tarjetas que Palacio, con dos descargas (movil y ordenador)
+     y la foto de una lampara de litofania en la tarjeta de usos. */
+  .pro-free + .pro-free{margin-top:8px;}
+  .litho-shot{width:100%;border-radius:10px;display:block;margin:4px 0 6px;border:1px solid rgba(232,185,79,0.25);}
 
   /* PARA PROFESIONALES (Obrix y Confidencia)
      Dos tarjetas grandes con el mismo lenguaje que .app-card.featured: borde
@@ -685,6 +690,7 @@
     <div class="brand" translate="no"><img src="/assets/logo.jpg" alt="">SILENTIUM SUPERNOVA</div>
     <div class="nav-links">
       <a href="/#palacio" translate="no">Palacio</a>
+      <a href="/#litho3d" translate="no">Litho3D</a>
       <a href="/#pro">Profesionales</a>
       <a href="/#apps">Apps</a>
       <a href="/#precios">Precios</a>
@@ -746,6 +752,56 @@
         <h4>Para recordar</h4>
         <p>Pensada también para personas mayores o con problemas de memoria, y para quienes las cuidan. Guarda dónde están las llaves, las gafas o las medicinas, con letra grande y pocos botones. Un hijo o una hija puede grabar un mensaje que suena al apuntar a ese sitio: «Papá, las pastillas de la noche están aquí».</p>
         <p class="palacio-note">Las fotos, las tarjetas y los mensajes se quedan solo en tu móvil. Necesita un Android compatible con la realidad aumentada de Google (ARCore).</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section" id="litho3d">
+  <div class="wrap">
+    <div class="section-label">Impresión 3D</div>
+    <h2 class="section-title section-title-tight">De tu foto a tu impresora 3D</h2>
+    <p class="section-sub">Litofanías, lámparas y figuras en relieve, listas para imprimir en cualquier impresora 3D. Las diseñas en el móvil o en el ordenador y las ves en 3D antes de gastar filamento.</p>
+    <div class="pro-grid">
+
+      <div class="pro-card">
+        <div class="pro-head">
+          <div class="app-icon"><img src="/assets/litho3d.jpg" alt=""></div>
+          <div>
+            <h3 translate="no">Litho3D</h3>
+            <p class="pro-tagline">Litofanías, lámparas y figuras para tu impresora.</p>
+          </div>
+        </div>
+        <p class="pro-desc">Elige una foto o diseña tu lámpara con el dedo, gírala en 3D y mira cómo quedará con la luz encendida. Cuando te guste, Litho3D crea el archivo STL para tu impresora: sin internet, sin cuentas y sin subir tus fotos a ningún sitio.</p>
+        <ul>
+          <li>Litofanías planas, curvas, de cilindro (lámpara) y de corazón</li>
+          <li>Vista 3D "encendida": ves la foto con la luz detrás antes de imprimir</li>
+          <li>Lámparas a tu gusto: silueta, giro, nervios, ondas y agujeros</li>
+          <li>Base para bombilla E14 o E27, o para luz LED</li>
+          <li>Figuras de pie, llaveros y medallas en relieve desde una foto</li>
+          <li>Android y Windows · 4 idiomas · todo dentro de tu dispositivo</li>
+        </ul>
+        <div class="pro-price">4,95€<span>/mes</span></div>
+        <div class="pro-year">o 39,95€ al año</div>
+        <div class="app-subscribe">
+          <a href="https://buy.stripe.com/fZufZi4vb2fe7L7fRP9oc0e" target="_blank" rel="noopener">Mensual</a>
+          <a href="https://buy.stripe.com/fZueVe3r78DC5CZfRP9oc0f" target="_blank" rel="noopener" class="annual">Anual</a>
+        </div>
+        <a class="pro-free" href="https://api.silentiumsupernova.com/download/litho3d">Descargar gratis para Android<small>Versión gratuita: diseña todo y crea litofanías planas, sin tarjeta ni registro</small></a>
+        <a class="pro-free" href="https://api.silentiumsupernova.com/download/litho3d-windows">Descargar gratis para Windows<small>Descomprime el zip y abre Litho3D.exe. Si Windows avisa, pulsa «Más información» y «Ejecutar de todas formas».</small></a>
+      </div>
+
+      <div class="pro-card palacio-how">
+        <h3>Tres cosas que puedes hacer</h3>
+        <img class="litho-shot" src="/assets/litho3d-banner.jpg" alt="Lámpara de litofanía impresa en 3D con un paisaje iluminado" loading="lazy">
+        <h4>Litofanías</h4>
+        <p>Una foto que aparece al encender la luz detrás. Elige la forma, el tamaño, el grosor y el marco, y mírala en 3D apagada y encendida.</p>
+        <h4>Lámparas</h4>
+        <p>Dibuja la silueta con el dedo o parte de un jarrón, un globo o una campana. Dale giro, nervios, ondas y agujeros, y elige la base para tu bombilla o tu LED.</p>
+        <h4>Figuras en relieve</h4>
+        <p>De una foto con fondo liso: una figura de pie con su peana, un llavero o una medalla. Litho3D quita el fondo y da relieve según la claridad.</p>
+        <p class="palacio-note">Vale para cualquier impresora de filamento: Anycubic, Creality, Bambu Lab, Prusa, Elegoo, Sovol… El archivo STL se abre en Cura, Anycubic Slicer, Bambu Studio, PrusaSlicer u Orca.</p>
       </div>
 
     </div>
